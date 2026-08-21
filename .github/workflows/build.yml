@@ -22,12 +22,17 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
-      - name: Set up MSBuild
-        uses: microsoft/setup-msbuild@v2
+      - name: Locate MSBuild
+        shell: pwsh
+        run: |
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $msbuild = & $vswhere -latest -products * -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe | Select-Object -First 1
+          if (-not $msbuild) {
+            throw "MSBuild was not found on the runner."
+          }
+          "MSBUILD_PATH=$msbuild" >> $env:GITHUB_ENV
 
       - name: Build
-        run: >-
-          MSBuild.exe WorkspaceCFG.sln
-          /restore
-          /p:Configuration=Release
-          /p:Platform=x64
+        shell: pwsh
+        run: |
+          & $env:MSBUILD_PATH WorkspaceCFG.sln /restore /p:Configuration=Release /p:Platform=x64
