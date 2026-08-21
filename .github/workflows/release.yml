@@ -1,16 +1,15 @@
-name: Build
+name: Release
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
+    tags:
+      - 'v*'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  build:
+  release:
     runs-on: windows-latest
 
     steps:
@@ -36,3 +35,20 @@ jobs:
         shell: pwsh
         run: |
           & $env:MSBUILD_PATH WorkspaceCFG.sln /restore /p:Configuration=Release /p:Platform=x64
+
+      - name: Publish
+        shell: pwsh
+        run: |
+          & $env:MSBUILD_PATH WorkspaceCFG\WorkspaceCFG.csproj /restore /t:Publish /p:Configuration=Release /p:Platform=x64 /p:PublishProfile=WorkspaceCFG\Properties\PublishProfiles\FolderProfile.pubxml
+
+      - name: Package release
+        shell: pwsh
+        run: |
+          Compress-Archive -Path WorkspaceCFG\bin\Release\Publish\* -DestinationPath ConfigurationExplorer-win-x64.zip
+
+      - name: Create GitHub release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create $env:GITHUB_REF_NAME ConfigurationExplorer-win-x64.zip --verify-tag --generate-notes --title $env:GITHUB_REF_NAME
