@@ -17,7 +17,7 @@ using System.Runtime.Versioning;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("Bentley Systems Inc.")]
 [assembly: AssemblyProduct("WorkspaceCFG")]
-[assembly: AssemblyCopyright("Copyright: (c) 2024 Bentley Systems, Incorporated.")]
+[assembly: AssemblyCopyright("Copyright: (c) Bentley Systems, Incorporated.")]
 [assembly: AssemblyTrademark("")]
 
 [assembly: ComVisible(false)]

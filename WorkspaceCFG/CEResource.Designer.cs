@@ -565,11 +565,11 @@ namespace WorkspaceCFG.My.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copyright (c) 2024 Bentley Systems, Incorporated. All Rights Reserved..
+        ///   Looks up a localized string similar to Copyright (c) {0} Bentley Systems, Incorporated. All Rights Reserved..
         /// </summary>
         public static string TXT_Copyright {
             get {
-                return ResourceManager.GetString("TXT_Copyright", resourceCulture);
+                return string.Format(ResourceManager.GetString("TXT_Copyright", resourceCulture), DateTime.Now.Year);
             }
         }
         

@@ -138,7 +138,7 @@ namespace Bentley.ConfigurationExplorer.AboutApp
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Text = "Copyright \u00A9 2024 Bentley Systems, Incorporated";
+            this.label2.Text = "Copyright \u00A9 2026 Bentley Systems, Incorporated";
             // 
             // label3
             // 
@@ -147,7 +147,7 @@ namespace Bentley.ConfigurationExplorer.AboutApp
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.label3.Name = "label3";
-            this.label3.Text = "Copyright \u00A9 2024 Bentley Systems, Incorporated. All rights reserved.\r\n\r\nIncluding software, file formats, and audiovisual displays; may only be used pursuant to applicable software license agreement; contains confidential and proprietary information of Bentley Systems, Incorporated and/or third parties which is protected by copyright and trade secret law and may not be provided or otherwise made available without proper authorization.\r\n\r\nTRADEMARK NOTICE\r\nBentley and the \"B\" Bentley logo are registered or non-registered trademarks of Bentley Systems, Inc. or Bentley Software, Inc.";
+            this.label3.Text = "Copyright \u00A9 2026 Bentley Systems, Incorporated. All rights reserved.\r\n\r\nIncluding software, file formats, and audiovisual displays; may only be used pursuant to applicable software license agreement; contains confidential and proprietary information of Bentley Systems, Incorporated and/or third parties which is protected by copyright and trade secret law and may not be provided or otherwise made available without proper authorization.\r\n\r\nTRADEMARK NOTICE\r\nBentley and the \"B\" Bentley logo are registered or non-registered trademarks of Bentley Systems, Inc. or Bentley Software, Inc.";
             // 
             // buttonRowPanel
             // 

@@ -1773,7 +1773,7 @@
     <value>Tabbed Variable Dossier</value>
   </data>
   <data name="TXT_Copyright" xml:space="preserve">
-    <value>Copyright (c) 2024 Bentley Systems, Incorporated. All Rights Reserved.</value>
+    <value>Copyright (c) {0} Bentley Systems, Incorporated. All Rights Reserved.</value>
   </data>
   <data name="TXT_CopyrightNotice" xml:space="preserve">
     <value>Including software, file formats, and audio-visual displays; may be used pursuant to applicable software license agreement; contains confidential and proprietary information of Bentley Systems and/or third parties which is protected by copyright and trade secret law and may not be provided or otherwise made available without proper authorization.

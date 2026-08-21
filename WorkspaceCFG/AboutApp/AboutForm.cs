@@ -22,12 +22,21 @@ namespace Bentley.ConfigurationExplorer.AboutApp
         public AboutForm()
         {
             InitializeComponent ();
+            UpdateCopyrightYear();
         }
 
         public AboutForm(String versionStr)
         {
             _versionString= versionStr;
             InitializeComponent();
+            UpdateCopyrightYear();
+        }
+
+        private void UpdateCopyrightYear()
+        {
+            string year = DateTime.Now.Year.ToString();
+            label2.Text = label2.Text.Replace("2024", year);
+            label3.Text = label3.Text.Replace("2024", year);
         }
 
         /*------------------------------------------------------------------------------------**/
