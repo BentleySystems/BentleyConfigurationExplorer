@@ -1,0 +1,98 @@
+#--------------------------------------------------------------------------------------------------------------------------
+# Example CER (Configuration Explorer Rules) file
+#
+#       Options:
+#               MUST                                    - Creates Error Events
+#               MUST_NOT                                - Creates Error Events
+#               SHOULD                                  - Creates Warning Events
+#               SHOULD_NOT                              - Creates Warning Events
+#
+#       Attributes:
+#               BE_DEFINED                              - The variable is defined
+#               BE_LOCKED                               - The variable is locked
+#               BE_FOLDER                               - If defined the variable looks like a folder (can not look like a file)
+#               BE_FILE                                 - If defined the variable looks like a file
+#               BE_FILE_OR_FOLDER                       - If defined the variable looks like a folder or a file
+#               BE_NUMBER                               - If defined the variable is a number
+#               BE_BLANK                                - If defined the variable is blank or empty (no value)
+#               HAVE_ONE_VALUE                          - If defined the variable has one and only one value (can be a blank value)
+#               HAVE_FOLDER_EXIST                       - If defined the variable points to folder that exists (can point to file where the folder exists)
+#               HAVE_FILE_EXIST                         - If defined the variable points to file that exists (in theory the folder must also exist)
+#               HAVE_FILE_OR_FOLDER_EXIST				- If defined and if variable is a folder then folder must exist, if variable is file the file must exist
+#               HAVE_WILDCARD_CHARACTER					- If defined the variable has the wildcard character *
+#
+#       Attributes that require the <VALUE> field:
+#               BE_LIKE                                 - If defined the variable expansion contains <VALUE>				- case insensitive
+#               BE_NOT_LIKE                             - If defined the variable expansion does not contain <VALUE>		- case insensitive
+#               BE_EQUAL_TO                             - If defined the variable expansion equals <VALUE>					- case insensitive
+#               BE_NOT_EQUAL_TO                         - If defined the variable expansion does not equal <VALUE>          - case insensitive
+#
+#       Vertical bar symbol | can be used to specify multiple values
+#
+#       Usage:
+#               <VARNAME> <OPTION> <ATTRIBUTE>
+#               <VARNAME> <OPTION> <ATTRIBUTE> <VALUE>
+#
+#--------------------------------------------------------------------------------------------------------------------------
+
+MS_CELL													MUST            BE_DEFINED
+MS_CELL													MUST            BE_FOLDER
+MS_CELL													MUST_NOT        BE_EQUAL_TO                             Bananas|Kentucky
+MS_CELL													MUST_NOT        BE_LOCKED
+
+MS_CELLLIST												MUST            BE_DEFINED
+MS_CELLLIST												MUST            BE_FILE
+
+BB_ANNOTATION_CELLLIB									MUST            BE_DEFINED
+BB_ANNOTATION_CELLLIB									MUST_NOT        HAVE_WILDCARD_CHARACTER
+
+TF_DIR													MUST            BE_DEFINED
+TF_DIR													MUST            HAVE_ONE_VALUE
+TF_DIR													MUST            BE_FOLDER
+TF_DIR													MUST            HAVE_FOLDER_EXIST
+
+DG_CATALOGS_PATH										MUST            BE_DEFINED
+DG_CATALOGS_PATH										MUST            BE_FOLDER
+DG_CATALOGS_PATH										MUST            HAVE_FOLDER_EXIST
+
+TFANNOTATION_CELL_LIBFILE								MUST            BE_DEFINED
+TFANNOTATION_CELL_LIBFILE								MUST            HAVE_FILE_EXIST
+
+ARCHITECTURE											MUST            BE_EQUAL_TO                             0|1
+MS_REF_NEWLEVELDISPLAY									MUST            BE_NUMBER
+
+MY_PATH													MUST            BE_DEFINED
+MY_PATH													SHOULD          HAVE_FOLDER_EXIST
+
+#-------------------------------------------------------------
+# Platform Recommendations
+#-------------------------------------------------------------
+MS_REF_DEFAULTSETTINGS									SHOULD          BE_LIKE                                 ignoreWhenNesting=1
+MS_REF_DEFAULTSETTINGS									SHOULD          BE_LIKE                                 nestdepth=99
+MS_REF_DEFAULTSETTINGS									SHOULD          BE_LIKE                                 nestMode=live
+MS_REF_DEFAULTSETTINGS									SHOULD          BE_LIKE                                 nestOverrides=allow
+MS_REF_NEWLEVELDISPLAY									SHOULD          BE_EQUAL_TO                             1
+
+#-------------------------------------------------------------
+# New Variables
+#-------------------------------------------------------------
+MS_SEED_LINKSET_FILE_NAME								SHOULD          BE_DEFINED
+MS_SEED_LINKSET_NAME									SHOULD          BE_DEFINED
+MS_SEED_LINKSET_PATH									SHOULD          BE_DEFINED
+MS_MARKUPSETTINGS										SHOULD          BE_DEFINED
+
+#-------------------------------------------------------------
+# Obsolete Variables
+#-------------------------------------------------------------
+MS_VIEWSEEDFILE											SHOULD_NOT      BE_DEFINED
+MS_PLANVIEWSEEDNAME										SHOULD_NOT      BE_DEFINED
+MS_ELEVATIONVIEWSEEDNAME								SHOULD_NOT      BE_DEFINED
+MS_DETAILVIEWSEEDNAME									SHOULD_NOT      BE_DEFINED
+MS_SECTIONVIEWSEEDNAME									SHOULD_NOT      BE_DEFINED
+TFCAT_DIR												SHOULD_NOT      BE_DEFINED
+TFCAT_CELL												SHOULD_NOT      BE_DEFINED
+TFCAT_MENU												SHOULD_NOT      BE_DEFINED
+TFCAT_MENUFILE											SHOULD_NOT      BE_DEFINED
+IFM_CONFIGIFM_DEFCONNTOL								SHOULD_NOT      BE_DEFINED
+IFM_DEFREPORT											SHOULD_NOT      BE_DEFINED
+IFM_DEFSEED												SHOULD_NOT      BE_DEFINED

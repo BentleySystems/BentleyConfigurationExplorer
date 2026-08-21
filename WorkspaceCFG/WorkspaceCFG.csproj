@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <StartupObject>WorkspaceCFG.MainType</StartupObject>
+    <RootNamespace>WorkspaceCFG</RootNamespace>
+    <AssemblyName>ConfigurationExplorer</AssemblyName>
+    <ApplicationIcon>bentleyb_64.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>x64</Platforms>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ProjectGuid>{D6AEB0D2-FCAC-0DA5-0398-811207F078F8}</ProjectGuid>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>bin\Debug\WorkspaceCFG.xml</DocumentationFile>
+    <WarningLevel>3</WarningLevel>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Publish\</OutputPath>
+    <DocumentationFile>bin\Release\WorkspaceCFG.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Custom logical resource name preserved from the original project; the generated
+         Resources.Designer.cs ResourceManager looks up resources under this exact base name
+         rather than the SDK-style default (RootNamespace + relative path). -->
+    <EmbeddedResource Update="AboutApp\Properties\Resources.resx">
+      <LogicalName>Bentley.ConfigurationExplorer.AboutApp.Properties.Resources.resources</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="app.config" />
+    <Content Include="Config\Variables.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Documentation\BentleyConfigurationExplorerHelp.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="images\AppHelp.ico" />
+    <Content Include="bentleyb_64.ico" />
+    <Content Include="Config\IgnoreAppList.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Variables.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\AppArrangeWindow.ico" />
+    <Content Include="images\AppCloseWindow.ico" />
+    <Content Include="images\AppInfo.ico" />
+    <Content Include="images\AppMgr.ico" />
+    <Content Include="images\AppSwitchWindow.ico" />
+    <Content Include="images\Bentley.png" />
+    <None Include="images\bentleyb_16.jpg" />
+    <None Include="images\bentleyb_32.jpg" />
+    <None Include="images\bentleyb_64.jpg" />
+    <None Include="images\bentleyb_orb.png" />
+    <Content Include="images\BentleyLogo.ico" />
+    <Content Include="images\Button-Add-icon.png" />
+    <Content Include="images\Button-Close-icon.png" />
+    <None Include="images\b_logo.bmp" />
+    <None Include="images\CancelSymbol.png" />
+    <None Include="images\ButtonAdd.png" />
+    <None Include="images\ButtonRemove.png" />
+    <None Include="images\ButtonClipboard.png" />
+    <None Include="images\ButtonClipboardWrite.ico.png" />
+    <Content Include="images\FAQ-icon.png" />
+    <None Include="images\OkSymbol.png" />
+    <Content Include="images\Search.png" />
+    <Content Include="images\tip.ico" />
+    <Content Include="Rules\AECOsim.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Rules\example.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AboutApp\Icon\bentleyb_64.jpg" />
+    <Content Include="AboutApp\Icon\ConfigurationExplorerV8i.ico" />
+  </ItemGroup>
+
+</Project>

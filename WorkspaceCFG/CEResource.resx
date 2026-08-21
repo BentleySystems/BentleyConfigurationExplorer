@@ -1,0 +1,1883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TXT_100" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="TXT_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="TXT_AboutMenu" xml:space="preserve">
+    <value>&amp;About Bentley Configuration Explorer</value>
+  </data>
+  <data name="TXT_AdditionalCommandlineArguments" xml:space="preserve">
+    <value>Additional Command Line Arguments:</value>
+  </data>
+  <data name="TXT_Application" xml:space="preserve">
+    <value>Application:</value>
+  </data>
+  <data name="TXT_ApplicationList" xml:space="preserve">
+    <value>Application List:</value>
+  </data>
+  <data name="TXT_ApplicationManager" xml:space="preserve">
+    <value>Application Manager</value>
+  </data>
+  <data name="TXT_ApplicationShortcutDescription" xml:space="preserve">
+    <value>Use Existing Application as Shortcut Template:</value>
+  </data>
+  <data name="TXT_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="TXT_ArrangeIcons" xml:space="preserve">
+    <value>&amp;Arrange Icons</value>
+  </data>
+  <data name="TXT_AutoFormat" xml:space="preserve">
+    <value>Auto Format</value>
+  </data>
+  <data name="TXT_Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="TXT_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="TXT_Cascade" xml:space="preserve">
+    <value>Cascade</value>
+  </data>
+  <data name="TXT_CDrive" xml:space="preserve">
+    <value>C:\</value>
+  </data>
+  <data name="TXT_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="TXT_ClearResults" xml:space="preserve">
+    <value>Clear Results</value>
+  </data>
+  <data name="TXT_CloseAll" xml:space="preserve">
+    <value>C&amp;lose All</value>
+  </data>
+  <data name="TXT_CloseWorkspace" xml:space="preserve">
+    <value>Close Workspace</value>
+  </data>
+  <data name="TXT_CompareWorkspaces" xml:space="preserve">
+    <value>&amp;Compare Workspaces</value>
+  </data>
+  <data name="TXT_CompiledCFG" xml:space="preserve">
+    <value>Compiled CFG</value>
+  </data>
+  <data name="TXT_ConfigurationExplorer" xml:space="preserve">
+    <value>Configuration Explorer</value>
+  </data>
+  <data name="TXT_ConfigurationFile" xml:space="preserve">
+    <value>Configuration File:</value>
+  </data>
+  <data name="TXT_Contents" xml:space="preserve">
+    <value>&amp;Contents</value>
+  </data>
+  <data name="TXT_Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="TXT_CopyExpanded" xml:space="preserve">
+    <value>Copy Expanded</value>
+  </data>
+  <data name="TXT_CopyFileName" xml:space="preserve">
+    <value>Copy File Name</value>
+  </data>
+  <data name="TXT_CopyPath" xml:space="preserve">
+    <value>Copy Path</value>
+  </data>
+  <data name="TXT_CopyToClipboard" xml:space="preserve">
+    <value>Copy to Clipboard</value>
+  </data>
+  <data name="TXT_Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="TXT_CriticalError" xml:space="preserve">
+    <value>Critical Error</value>
+  </data>
+  <data name="TXT_CurrentFile" xml:space="preserve">
+    <value>Current File:</value>
+  </data>
+  <data name="TXT_DateTime" xml:space="preserve">
+    <value>6/25/2009 4:31 PM</value>
+  </data>
+  <data name="TXT_Depth" xml:space="preserve">
+    <value>Depth:</value>
+  </data>
+  <data name="TXT_DepthTitle" xml:space="preserve">
+    <value>Depth</value>
+  </data>
+  <data name="TXT_Errors" xml:space="preserve">
+    <value>Errors:</value>
+  </data>
+  <data name="TXT_ErrorsTitle" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="TXT_Errors_ToTextFile" xml:space="preserve">
+    <value>To Text File</value>
+  </data>
+  <data name="TXT_EventHistory" xml:space="preserve">
+    <value>Event History</value>
+  </data>
+  <data name="TXT_Events" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="TXT_EventsLabel" xml:space="preserve">
+    <value>Events:</value>
+  </data>
+  <data name="TXT_Exit" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="TXT_Expand" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="TXT_ExpandFolders" xml:space="preserve">
+    <value>Expand Folders to list all files.</value>
+  </data>
+  <data name="TXT_Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="TXT_ExportToExcel" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="TXT_ExportToFile" xml:space="preserve">
+    <value>Export to file</value>
+  </data>
+  <data name="TXT_File" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="TXT_FileHistory" xml:space="preserve">
+    <value>File History</value>
+  </data>
+  <data name="TXT_FileHistoryMenu" xml:space="preserve">
+    <value>&amp;File History</value>
+  </data>
+  <data name="TXT_FileLabel" xml:space="preserve">
+    <value>File:</value>
+  </data>
+  <data name="TXT_FileList" xml:space="preserve">
+    <value>File List</value>
+  </data>
+  <data name="TXT_Files" xml:space="preserve">
+    <value>Files:</value>
+  </data>
+  <data name="TXT_FileViewer" xml:space="preserve">
+    <value>FileViewer</value>
+  </data>
+  <data name="TXT_Filter" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="TXT_FilterByFile" xml:space="preserve">
+    <value>Filter By File:</value>
+  </data>
+  <data name="TXT_FindIt" xml:space="preserve">
+    <value>Find It</value>
+  </data>
+  <data name="TXT_Flyover_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="TXT_Flyover_New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="TXT_Flyover_Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="TXT_Flyover_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="TXT_GoToLineInViewer" xml:space="preserve">
+    <value>Go To Line in Viewer</value>
+  </data>
+  <data name="TXT_GroupInMainWindow" xml:space="preserve">
+    <value>Group in Main Window</value>
+  </data>
+  <data name="TXT_Help" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="TXT_HelpSearch" xml:space="preserve">
+    <value>&amp;Search</value>
+  </data>
+  <data name="TXT_HighliteModifiedFiles" xml:space="preserve">
+    <value>Highlite files modified in the last 12 hours:</value>
+  </data>
+  <data name="TXT_HistoryLabel" xml:space="preserve">
+    <value>Bentley Configuration Explorer - Version  {0}</value>
+  </data>
+  <data name="TXT_Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="TXT_IncludeResultsFromVariableLibrary" xml:space="preserve">
+    <value>Include results from variable library</value>
+  </data>
+  <data name="TXT_Index" xml:space="preserve">
+    <value>&amp;Index</value>
+  </data>
+  <data name="TXT_InstallAppsView" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="TXT_InstalledApps" xml:space="preserve">
+    <value>Installed Apps</value>
+  </data>
+  <data name="TXT_Item1" xml:space="preserve">
+    <value>Item 1</value>
+  </data>
+  <data name="TXT_Item2" xml:space="preserve">
+    <value>Item 2</value>
+  </data>
+  <data name="TXT_Item3" xml:space="preserve">
+    <value>Item 3</value>
+  </data>
+  <data name="TXT_Item4" xml:space="preserve">
+    <value>Item 4</value>
+  </data>
+  <data name="TXT_Item5" xml:space="preserve">
+    <value>Item 5</value>
+  </data>
+  <data name="TXT_Item6" xml:space="preserve">
+    <value>Item 6</value>
+  </data>
+  <data name="TXT_LastModifiedDate" xml:space="preserve">
+    <value>Last Modified Date:</value>
+  </data>
+  <data name="TXT_Level" xml:space="preserve">
+    <value>LEVEL</value>
+  </data>
+  <data name="TXT_LineCount" xml:space="preserve">
+    <value>Line Count</value>
+  </data>
+  <data name="TXT_LineData" xml:space="preserve">
+    <value>Line data</value>
+  </data>
+  <data name="TXT_LineDescription" xml:space="preserve">
+    <value>Line Description:</value>
+  </data>
+  <data name="TXT_Lines" xml:space="preserve">
+    <value>Lines:</value>
+  </data>
+  <data name="TXT_LinkError" xml:space="preserve">
+    <value>There was a critical error raised in &lt;FILE&gt; on line &lt;LINE&gt;</value>
+  </data>
+  <data name="TXT_LinkLabel1" xml:space="preserve">
+    <value>LinkLabel1</value>
+  </data>
+  <data name="TXT_LinkLabel2" xml:space="preserve">
+    <value>LinkLabel2</value>
+  </data>
+  <data name="TXT_LinkLabel3" xml:space="preserve">
+    <value>LinkLabel3</value>
+  </data>
+  <data name="TXT_LinkLabel4" xml:space="preserve">
+    <value>LinkLabel4</value>
+  </data>
+  <data name="TXT_LoadFromCurrentWorkspace" xml:space="preserve">
+    <value>Load From Current Workspace</value>
+  </data>
+  <data name="TXT_LoadFromWorkspaceFile" xml:space="preserve">
+    <value>Load From Workspace File</value>
+  </data>
+  <data name="TXT_LocalWorkspace" xml:space="preserve">
+    <value>Local Workspace</value>
+  </data>
+  <data name="TXT_Locations" xml:space="preserve">
+    <value>Locations</value>
+  </data>
+  <data name="TXT_msdebug" xml:space="preserve">
+    <value>msdebug</value>
+  </data>
+  <data name="TXT_NewWorkspace" xml:space="preserve">
+    <value>&amp;New Workspace</value>
+  </data>
+  <data name="TXT_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="TXT_OOBWorkspace" xml:space="preserve">
+    <value>OOB Workspace</value>
+  </data>
+  <data name="TXT_OpenAllInEditor" xml:space="preserve">
+    <value>Open All in Editor</value>
+  </data>
+  <data name="TXT_OpenContainingFolder" xml:space="preserve">
+    <value>Open Containing Folder</value>
+  </data>
+  <data name="TXT_OpenFileInEditor" xml:space="preserve">
+    <value>Open File in Editor</value>
+  </data>
+  <data name="TXT_OpenFileInViewer" xml:space="preserve">
+    <value>Open File in Viewer</value>
+  </data>
+  <data name="TXT_OpenFirstAvaliableFolder" xml:space="preserve">
+    <value>Open First Available Folder</value>
+  </data>
+  <data name="TXT_OpenHistoryFile" xml:space="preserve">
+    <value>Open History File</value>
+  </data>
+  <data name="TXT_OpenIncludeEvent" xml:space="preserve">
+    <value>Open Include Event</value>
+  </data>
+  <data name="TXT_OpenInEditor" xml:space="preserve">
+    <value>Open in Editor</value>
+  </data>
+  <data name="TXT_OpenVariableInDossier" xml:space="preserve">
+    <value>Open Variable in Dossier</value>
+  </data>
+  <data name="TXT_OpenWorkspace" xml:space="preserve">
+    <value>&amp;Open Workspace</value>
+  </data>
+  <data name="TXT_Options" xml:space="preserve">
+    <value>&amp;Options</value>
+  </data>
+  <data name="TXT_ParentFile" xml:space="preserve">
+    <value>Parent File:</value>
+  </data>
+  <data name="TXT_Paste" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="TXT_PathChecker" xml:space="preserve">
+    <value>Path Checker</value>
+  </data>
+  <data name="TXT_Project" xml:space="preserve">
+    <value>Project:</value>
+  </data>
+  <data name="TXT_ReloadWorkspaces" xml:space="preserve">
+    <value>Reload &amp;Workspaces</value>
+  </data>
+  <data name="TXT_Rescan" xml:space="preserve">
+    <value>Rescan</value>
+  </data>
+  <data name="TXT_RescanConfiguration" xml:space="preserve">
+    <value>Rescan Configuration</value>
+  </data>
+  <data name="TXT_ResetLocations" xml:space="preserve">
+    <value>&amp;Reset Locations</value>
+  </data>
+  <data name="TXT_ResetWindowLocations" xml:space="preserve">
+    <value>Reset Window &amp;Locations</value>
+  </data>
+  <data name="TXT_Results" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="TXT_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="TXT_SaveAs" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="TXT_SaveWorkspace" xml:space="preserve">
+    <value>&amp;Save Workspace</value>
+  </data>
+  <data name="TXT_Search" xml:space="preserve">
+    <value>&amp;Search</value>
+  </data>
+  <data name="TXT_SearchLabel" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="TXT_SearchTitle" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="TXT_SelectConfigurationsToCompare" xml:space="preserve">
+    <value>Select Configurations to Compare</value>
+  </data>
+  <data name="TXT_ShortcutCreator" xml:space="preserve">
+    <value>Shortc&amp;ut Creator</value>
+  </data>
+  <data name="TXT_ShortcutCreatorTitle" xml:space="preserve">
+    <value>Shortcut Creator</value>
+  </data>
+  <data name="TXT_ShortcutOutputFolder" xml:space="preserve">
+    <value>Shortcut Output Folder:</value>
+  </data>
+  <data name="TXT_ShowErrors" xml:space="preserve">
+    <value>Show Errors</value>
+  </data>
+  <data name="TXT_ShowEventDescriptions" xml:space="preserve">
+    <value>Show Event Descriptions</value>
+  </data>
+  <data name="TXT_ShowEvents" xml:space="preserve">
+    <value>Show Events</value>
+  </data>
+  <data name="TXT_ShowIncludes" xml:space="preserve">
+    <value>Show Includes</value>
+  </data>
+  <data name="TXT_ShowOthers" xml:space="preserve">
+    <value>Show Others</value>
+  </data>
+  <data name="TXT_ShowWarnings" xml:space="preserve">
+    <value>Show Warnings</value>
+  </data>
+  <data name="TXT_StartingLevel" xml:space="preserve">
+    <value>Starting Level:</value>
+  </data>
+  <data name="TXT_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TXT_StatusBar" xml:space="preserve">
+    <value>&amp;Status Bar</value>
+  </data>
+  <data name="TXT_Status_Ready" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="TXT_TileHorizontal" xml:space="preserve">
+    <value>Tile Horizontal</value>
+  </data>
+  <data name="TXT_TileVertical" xml:space="preserve">
+    <value>Tile Vertical</value>
+  </data>
+  <data name="TXT_ToExcel" xml:space="preserve">
+    <value>To Excel</value>
+  </data>
+  <data name="TXT_ToggleCommentBlock" xml:space="preserve">
+    <value>Toggle Comment Block</value>
+  </data>
+  <data name="TXT_ToImage" xml:space="preserve">
+    <value>To Image</value>
+  </data>
+  <data name="TXT_Toolbar" xml:space="preserve">
+    <value>&amp;Toolbar</value>
+  </data>
+  <data name="TXT_Tools" xml:space="preserve">
+    <value>&amp;Tools</value>
+  </data>
+  <data name="TXT_ToText" xml:space="preserve">
+    <value>To Text</value>
+  </data>
+  <data name="TXT_ToTextFile" xml:space="preserve">
+    <value>To Text File</value>
+  </data>
+  <data name="TXT_UsableLines" xml:space="preserve">
+    <value>Usable Lines:</value>
+  </data>
+  <data name="TXT_ShortCutCommandPreview" xml:space="preserve">
+    <value>Shortcut Command Line Preview:</value>
+  </data>
+  <data name="TXT_User" xml:space="preserve">
+    <value>User:</value>
+  </data>
+  <data name="TXT_TargetApplicationLocation" xml:space="preserve">
+    <value>Target Application: (.exe)</value>
+  </data>
+  <data name="TXT_VariableExplorer" xml:space="preserve">
+    <value>&amp;Variable Explorer</value>
+  </data>
+  <data name="TXT_VariableGenerator" xml:space="preserve">
+    <value>Variable &amp;Generator</value>
+  </data>
+  <data name="TXT_VariableLibrary" xml:space="preserve">
+    <value>Variable &amp;Library</value>
+  </data>
+  <data name="TXT_VariableList" xml:space="preserve">
+    <value>Variable List</value>
+  </data>
+  <data name="TXT_VariableList_ToTextFile" xml:space="preserve">
+    <value>To Text File</value>
+  </data>
+  <data name="TXT_Variables" xml:space="preserve">
+    <value>Variables:</value>
+  </data>
+  <data name="TXT_VariableValidater" xml:space="preserve">
+    <value>Variable Validater</value>
+  </data>
+  <data name="TXT_View" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="TXT_Warnings" xml:space="preserve">
+    <value>Warnings:</value>
+  </data>
+  <data name="TXT_WCConfigurationFile" xml:space="preserve">
+    <value>Append Configuration File: (.cfg)</value>
+  </data>
+  <data name="TXT_Windows" xml:space="preserve">
+    <value>&amp;Windows</value>
+  </data>
+  <data name="TXT_Configuration" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="TXT_Configuration1" xml:space="preserve">
+    <value>Configuration 1</value>
+  </data>
+  <data name="TXT_Configuration2" xml:space="preserve">
+    <value>Configuration 2</value>
+  </data>
+  <data name="TXT_ConfigurationHistory" xml:space="preserve">
+    <value>Configuration &amp;History</value>
+  </data>
+  <data name="TXT_Configuration_ToTextFile" xml:space="preserve">
+    <value>To Text File</value>
+  </data>
+  <data name="TXT_0" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TXT_ApplicationTitle" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="TXT_Category" xml:space="preserve">
+    <value>Category:</value>
+  </data>
+  <data name="TXT_CategoryTitle" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="TXT_Children" xml:space="preserve">
+    <value>Children</value>
+  </data>
+  <data name="TXT_Comment" xml:space="preserve">
+    <value>Comment:</value>
+  </data>
+  <data name="TXT_CommentLine" xml:space="preserve">
+    <value>Comment Line</value>
+  </data>
+  <data name="TXT_CopyBackSlash" xml:space="preserve">
+    <value>Copy \</value>
+  </data>
+  <data name="TXT_CopyFrontSlash" xml:space="preserve">
+    <value>Copy /</value>
+  </data>
+  <data name="TXT_CurrentExpansion" xml:space="preserve">
+    <value>Current Expansion:</value>
+  </data>
+  <data name="TXT_CurrentValue" xml:space="preserve">
+    <value>Current Value:</value>
+  </data>
+  <data name="TXT_CurrentValues" xml:space="preserve">
+    <value>Current Values</value>
+  </data>
+  <data name="TXT_Defined" xml:space="preserve">
+    <value>DEFINED</value>
+  </data>
+  <data name="TXT_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="TXT_DescriptionFilter" xml:space="preserve">
+    <value>Description Filter:</value>
+  </data>
+  <data name="TXT_DescriptionTitle" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="TXT_DesiredValue" xml:space="preserve">
+    <value>Desired Value:</value>
+  </data>
+  <data name="TXT_DetectVariances" xml:space="preserve">
+    <value>Detect Variances in Variable Values</value>
+  </data>
+  <data name="TXT_DetectVariancesInVariableExpansions" xml:space="preserve">
+    <value>Detect Variances in Variable Expansions</value>
+  </data>
+  <data name="TXT_Expansion" xml:space="preserve">
+    <value>Expansion:</value>
+  </data>
+  <data name="TXT_ExpansionFilter" xml:space="preserve">
+    <value>Expansion Filter:</value>
+  </data>
+  <data name="TXT_Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="TXT_HideMatchingVariables" xml:space="preserve">
+    <value>Hide Matching Variables</value>
+  </data>
+  <data name="TXT_HideProgramFiles" xml:space="preserve">
+    <value>Hide Program Files</value>
+  </data>
+  <data name="TXT_HideResultsThatHavePassedValidation" xml:space="preserve">
+    <value>Hide results that have passed validation</value>
+  </data>
+  <data name="TXT_HideVariablesinCurrentWorkspace" xml:space="preserve">
+    <value>Hide Variables in use by current workspace</value>
+  </data>
+  <data name="TXT_HighlightUndefinedVariables" xml:space="preserve">
+    <value>Highlight Undefined Variables</value>
+  </data>
+  <data name="TXT_History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="TXT_Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="TXT_LevelLabel" xml:space="preserve">
+    <value>Level:</value>
+  </data>
+  <data name="TXT_Levels" xml:space="preserve">
+    <value>Levels</value>
+  </data>
+  <data name="TXT_LevelTitle" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="TXT_MaxPathBacktrack" xml:space="preserve">
+    <value>Max Path Backtrack:</value>
+  </data>
+  <data name="TXT_MinVariableLength" xml:space="preserve">
+    <value>Min Variable Length:</value>
+  </data>
+  <data name="TXT_NameFilter" xml:space="preserve">
+    <value>Name Filter:</value>
+  </data>
+  <data name="TXT_NoOfChildren" xml:space="preserve">
+    <value>No. of Children:</value>
+  </data>
+  <data name="TXT_NoOfParents" xml:space="preserve">
+    <value>No. of Parents:</value>
+  </data>
+  <data name="TXT_OpenFileHistory" xml:space="preserve">
+    <value>Open File History</value>
+  </data>
+  <data name="TXT_OpenLineInEditor" xml:space="preserve">
+    <value>Open Line in Editor</value>
+  </data>
+  <data name="TXT_OpenVariable" xml:space="preserve">
+    <value>Open Variable</value>
+  </data>
+  <data name="TXT_OpenVariableExplorer" xml:space="preserve">
+    <value>Open Variable Explorer</value>
+  </data>
+  <data name="TXT_OpenWorkspaceHistory" xml:space="preserve">
+    <value>Open Workspace History</value>
+  </data>
+  <data name="TXT_Parents" xml:space="preserve">
+    <value>Parents</value>
+  </data>
+  <data name="TXT_ResultsTitle" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="TXT_Rule" xml:space="preserve">
+    <value>Rule:</value>
+  </data>
+  <data name="TXT_SelectApplicationWorkspaceWorkset" xml:space="preserve">
+    <value>Select Application, Workspace, and Workset</value>
+  </data>
+  <data name="TXT_ShowMultilineVariables" xml:space="preserve">
+    <value>Show Multiline Variables</value>
+  </data>
+  <data name="TXT_Site" xml:space="preserve">
+    <value>SITE</value>
+  </data>
+  <data name="TXT_SourceCode" xml:space="preserve">
+    <value>Source Code</value>
+  </data>
+  <data name="TXT_StatusLabel" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="TXT_ToExcelFile" xml:space="preserve">
+    <value>To Excel File</value>
+  </data>
+  <data name="TXT_Value" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="TXT_ValueTitle" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="TXT_VariableDossier" xml:space="preserve">
+    <value>Variable Dossier</value>
+  </data>
+  <data name="TXT_VariableExplorerTitle" xml:space="preserve">
+    <value>Variable Explorer</value>
+  </data>
+  <data name="TXT_VariableGeneratorTitle" xml:space="preserve">
+    <value>Variable Generator</value>
+  </data>
+  <data name="TXT_VariableLibraryTitle" xml:space="preserve">
+    <value>Variable Library</value>
+  </data>
+  <data name="TXT_VariableName" xml:space="preserve">
+    <value>_VARIABLE NAME_</value>
+  </data>
+  <data name="TXT_VariablesTitle" xml:space="preserve">
+    <value>Variables</value>
+  </data>
+  <data name="TXT_ViewDefinitionInEditor" xml:space="preserve">
+    <value>View Definition in Editor</value>
+  </data>
+  <data name="TXT_ViewLocations" xml:space="preserve">
+    <value>View Locations</value>
+  </data>
+  <data name="TXT_ConfigurationDescriptionHere" xml:space="preserve">
+    <value>Configuration Description Here:</value>
+  </data>
+  <data name="TXT_ConfigurationVariableCompare" xml:space="preserve">
+    <value>Configuration Variable Compare</value>
+  </data>
+  <data name="TXT_CONFIGFILENAME" xml:space="preserve">
+    <value>CONFIG FILENAME</value>
+  </data>
+  <data name="TXT_CONFIGTEXT" xml:space="preserve">
+    <value>CONFIG TEXT</value>
+  </data>
+  <data name="TXT_DCApplication" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="TXT_DCCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="TXT_DCChain" xml:space="preserve">
+    <value>Chain</value>
+  </data>
+  <data name="TXT_DCChildren" xml:space="preserve">
+    <value>Children</value>
+  </data>
+  <data name="TXT_DCCommandlineArguments" xml:space="preserve">
+    <value>Commandline Arguments</value>
+  </data>
+  <data name="TXT_DCStartUpPath" xml:space="preserve">
+    <value>Start Up Cfg Path</value>
+  </data>
+  <data name="TXT_DCData1" xml:space="preserve">
+    <value>Data1</value>
+  </data>
+  <data name="TXT_DCDescrption" xml:space="preserve">
+    <value>Descrption</value>
+  </data>
+  <data name="TXT_DCEvent" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="TXT_DCExePath" xml:space="preserve">
+    <value>Exe Path</value>
+  </data>
+  <data name="TXT_DCExpansion" xml:space="preserve">
+    <value>Expansion</value>
+  </data>
+  <data name="TXT_DCFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="TXT_DCFINALVALUE" xml:space="preserve">
+    <value>FINAL VALUE</value>
+  </data>
+  <data name="TXT_DCGeneration" xml:space="preserve">
+    <value>Generation</value>
+  </data>
+  <data name="TXT_DCIconFile" xml:space="preserve">
+    <value>Icon File</value>
+  </data>
+  <data name="TXT_DCIconNumber" xml:space="preserve">
+    <value>Icon Number</value>
+  </data>
+  <data name="TXT_DCID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="TXT_DCLength" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="TXT_DCLevel" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="TXT_DCLine" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="TXT_DCLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="TXT_DCMatchType" xml:space="preserve">
+    <value>Match Type</value>
+  </data>
+  <data name="TXT_DCName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="TXT_DCParents" xml:space="preserve">
+    <value>Parents</value>
+  </data>
+  <data name="TXT_DCPath" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="TXT_DCResult" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="TXT_DCRules" xml:space="preserve">
+    <value>Rules</value>
+  </data>
+  <data name="TXT_DCStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TXT_DCValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="TXT_DCVariable" xml:space="preserve">
+    <value>Variable</value>
+  </data>
+  <data name="TXT_ExtCcf" xml:space="preserve">
+    <value>*.ccf</value>
+  </data>
+  <data name="TXT_ExtCfg" xml:space="preserve">
+    <value>*.cfg</value>
+  </data>
+  <data name="TXT_ExtDat" xml:space="preserve">
+    <value>*.dat</value>
+  </data>
+  <data name="TXT_ExtExe" xml:space="preserve">
+    <value>*.exe</value>
+  </data>
+  <data name="TXT_ExtExportWorkSpaceFilterCcf" xml:space="preserve">
+    <value>CCF File (*.ccf)|*.ccf|CCF File (*.ccf)|*.ccf</value>
+  </data>
+  <data name="TXT_ExtExportWorkSpaceFilterCfg" xml:space="preserve">
+    <value>Cfg File (*.cfg)|*.cfg|Cfg File (*.cfg)|*.cfg</value>
+  </data>
+  <data name="TXT_ExtExportWorkSpaceFilterDat" xml:space="preserve">
+    <value>Dat File (*.dat)|*.dat|Dat File (*.dat)|*.dat</value>
+  </data>
+  <data name="TXT_ExtExportWorkSpaceFilterPcf" xml:space="preserve">
+    <value>PCF File (*.pcf)|*.pcf|PCF File (*.pcf)|*.pcf</value>
+  </data>
+  <data name="TXT_ExtFilterExe" xml:space="preserve">
+    <value>Exe File (*.exe)|*.exe|Exe File (*.exe)|*.exe</value>
+  </data>
+  <data name="TXT_ExtOpenWorkSpaceFilter" xml:space="preserve">
+    <value>Configuration File (*.bcf)|*.bcf|Configuration File (*.bcf)|*.bcf</value>
+  </data>
+  <data name="TXT_ExtPcf" xml:space="preserve">
+    <value>*.pcf</value>
+  </data>
+  <data name="TXT_ExtSaveWorkSpaceFilter" xml:space="preserve">
+    <value>Excel File (*.xls)|*.xls|Excel File (*.xls)|*.xls</value>
+  </data>
+  <data name="TXT_ExtWrk" xml:space="preserve">
+    <value>*.bcf</value>
+  </data>
+  <data name="TXT_ExtXls" xml:space="preserve">
+    <value>.xls</value>
+  </data>
+  <data name="TXT_LabelSelectApplication" xml:space="preserve">
+    <value>(Select Application)</value>
+  </data>
+  <data name="TXT_LabelColor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="TXT_LabelCOMMENT" xml:space="preserve">
+    <value>COMMENT</value>
+  </data>
+  <data name="TXT_LabelCommentLine" xml:space="preserve">
+    <value>Comment line</value>
+  </data>
+  <data name="TXT_LabelDEFINED" xml:space="preserve">
+    <value>UNDEFINED</value>
+  </data>
+  <data name="TXT_LabelDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="TXT_LabelExcel" xml:space="preserve">
+    <value>excel</value>
+  </data>
+  <data name="TXT_LabelFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="TXT_TitleFileHistory" xml:space="preserve">
+    <value>File History - </value>
+  </data>
+  <data name="TXT_TitleFileHistoryReadOnly" xml:space="preserve">
+    <value>File History (READ ONLY) - </value>
+  </data>
+  <data name="TXT_LabelFileViewer" xml:space="preserve">
+    <value>File Viewer - </value>
+  </data>
+  <data name="TXT_LabelLevel" xml:space="preserve">
+    <value>Level </value>
+  </data>
+  <data name="TXT_LabelLine" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="TXT_LabelLineDescriptionLine" xml:space="preserve">
+    <value>Line Description: Line </value>
+  </data>
+  <data name="TXT_LabelLocations" xml:space="preserve">
+    <value>Locations: -</value>
+  </data>
+  <data name="TXT_LabelLOCKED" xml:space="preserve">
+    <value> , LOCKED</value>
+  </data>
+  <data name="TXT_LabelPathName" xml:space="preserve">
+    <value>PathName</value>
+  </data>
+  <data name="TXT_LabelPaths" xml:space="preserve">
+    <value> Paths</value>
+  </data>
+  <data name="TXT_LabelProduct" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="TXT_LabelSearchResults" xml:space="preserve">
+    <value>Search Results</value>
+  </data>
+  <data name="TXT_LabelUNDEFINED" xml:space="preserve">
+    <value>UNDEFINED</value>
+  </data>
+  <data name="TXT_LabelUNLOCKED" xml:space="preserve">
+    <value> , UNLOCKED</value>
+  </data>
+  <data name="TXT_LabelVARIABLEEXPANSION" xml:space="preserve">
+    <value>VARIABLE EXPANSION</value>
+  </data>
+  <data name="TXT_LabelVARIABLELIBRARY" xml:space="preserve">
+    <value>VARIABLE LIBRARY</value>
+  </data>
+  <data name="TXT_LabelVARIABLENAME" xml:space="preserve">
+    <value>VARIABLE NAME</value>
+  </data>
+  <data name="TXT_LabelVARIABLEVALUE" xml:space="preserve">
+    <value>VARIABLE VALUE</value>
+  </data>
+  <data name="TXT_LabelVersion" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="TXT_LabelVersionHistoryTxt" xml:space="preserve">
+    <value>version history.txt</value>
+  </data>
+  <data name="TXT_LabelWorkspaceOpened" xml:space="preserve">
+    <value>Workspace Opened.</value>
+  </data>
+  <data name="TXT_MsgConfigurationFile" xml:space="preserve">
+    <value>Configuration File: </value>
+  </data>
+  <data name="TXT_MsgConfigurationFileSaveChanges" xml:space="preserve">
+    <value>Configuration File: Save Changes</value>
+  </data>
+  <data name="TXT_MsgDone" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="TXT_MsgExportComplete" xml:space="preserve">
+    <value>Export Complete</value>
+  </data>
+  <data name="TXT_MsgExportWorkspaceDetailsToTextFile" xml:space="preserve">
+    <value>Export workspace details to text file</value>
+  </data>
+  <data name="TXT_MsgFileExportComplete" xml:space="preserve">
+    <value>File export complete.</value>
+  </data>
+  <data name="TXT_MsgFileNotFound" xml:space="preserve">
+    <value>File {0} not found.</value>
+  </data>
+  <data name="TXT_MsgFindConfigurationFile" xml:space="preserve">
+    <value>Find Configuration File</value>
+  </data>
+  <data name="TXT_MsgFindUstationExe" xml:space="preserve">
+    <value>Find Ustation Exe</value>
+  </data>
+  <data name="TXT_MsgHighliteFilesModifiedInThLastHour" xml:space="preserve">
+    <value>Highlite files modified in the last {0} hour:</value>
+  </data>
+  <data name="TXT_MsgIconCreator" xml:space="preserve">
+    <value>Icon Creator</value>
+  </data>
+  <data name="TXT_MsgMissingFile" xml:space="preserve">
+    <value>Missing File</value>
+  </data>
+  <data name="TXT_MsgMissingFolder" xml:space="preserve">
+    <value>Missing Folder</value>
+  </data>
+  <data name="TXT_MsgMultipleResults" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="TXT_MsgNoParentFile" xml:space="preserve">
+    <value>No parent file</value>
+  </data>
+  <data name="TXT_MsgOpenAllConfFiles" xml:space="preserve">
+    <value>This command will open all  {0} configuration files in the editor. Continue?</value>
+  </data>
+  <data name="TXT_MsgOpenAllInEditor" xml:space="preserve">
+    <value>Open all in Editor</value>
+  </data>
+  <data name="TXT_MsgOpenMsdebugFile" xml:space="preserve">
+    <value>Open msdebug file</value>
+  </data>
+  <data name="TXT_MsgProblemReadingWorkSpace1" xml:space="preserve">
+    <value>There was a problem reading workspace 1.</value>
+  </data>
+  <data name="TXT_MsgProblemReadingWorkSpace2" xml:space="preserve">
+    <value>There was a problem reading workspace 2.</value>
+  </data>
+  <data name="TXT_MsgSaveChanges" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="TXT_MsgSaveChangesTo" xml:space="preserve">
+    <value>Save changes to {0} ?</value>
+  </data>
+  <data name="TXT_MsgSaveVariableListToExcel" xml:space="preserve">
+    <value>Save Variable List to Excel</value>
+  </data>
+  <data name="TXT_MsgSaveWorkspaceToFile" xml:space="preserve">
+    <value>Save workspace to file</value>
+  </data>
+  <data name="TXT_MsgSelectTheShortcutOutputDirectory" xml:space="preserve">
+    <value>Select the Shortcut Output Directory</value>
+  </data>
+  <data name="TXT_MsgSettingsReloaded" xml:space="preserve">
+    <value>Settings Reloaded.</value>
+  </data>
+  <data name="TXT_MsgSingleResult" xml:space="preserve">
+    <value>1 Result</value>
+  </data>
+  <data name="TXT_MsgVariableCreated" xml:space="preserve">
+    <value>Variable {0} created</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedAtLevel" xml:space="preserve">
+    <value>Variable {0} created at level {1}</value>
+  </data>
+  <data name="TXT_MsgVariableReferenced" xml:space="preserve">
+    <value>Variable {0} referenced.</value>
+  </data>
+  <data name="TXT_MsgWorkSpace1NeedsVertSelection" xml:space="preserve">
+    <value>Workspace 1 needs a vertical selected.</value>
+  </data>
+  <data name="TXT_MsgWorkSpace2NeedsVertSelection1" xml:space="preserve">
+    <value>Workspace 2 needs a vertical selected.</value>
+  </data>
+  <data name="TXT_MsgWorkspaceMustBeRefreshed" xml:space="preserve">
+    <value>Workspace must be refreshed because changes have been made to one or more configuration files.</value>
+  </data>
+  <data name="TXT_MsgWorkspaceSaved" xml:space="preserve">
+    <value>Workspace Saved.</value>
+  </data>
+  <data name="TXT_MsgWorkspacMustBeRescanned" xml:space="preserve">
+    <value>Workspace must be rescanned before Auto Format can be applied.</value>
+  </data>
+  <data name="TXT_MultipleLocations" xml:space="preserve">
+    <value>{0} locations</value>
+  </data>
+  <data name="TXT_NoResults" xml:space="preserve">
+    <value>0 results</value>
+  </data>
+  <data name="TXT_OpenMsdebugFileFilter" xml:space="preserve">
+    <value>MSdebug File (*.txt)|*.txt|MSdebug File (*.txt)|*.txt</value>
+  </data>
+  <data name="TXT_SingleLocation" xml:space="preserve">
+    <value>1 location</value>
+  </data>
+  <data name="TXT_TitleAutoFormat" xml:space="preserve">
+    <value>Auto Format</value>
+  </data>
+  <data name="TXT_TitleConfigurationExplorer" xml:space="preserve">
+    <value>Configuration Explorer</value>
+  </data>
+  <data name="TXT_TitleEventHistory" xml:space="preserve">
+    <value>Event History - </value>
+  </data>
+  <data name="TXT_TitleFileNotFound" xml:space="preserve">
+    <value>File not found.</value>
+  </data>
+  <data name="TXT_TitleOpenWorkSpaceFromFile" xml:space="preserve">
+    <value>Open WorkSpace From File</value>
+  </data>
+  <data name="TXT_TitlePathChecker" xml:space="preserve">
+    <value>Path Checker - </value>
+  </data>
+  <data name="TXT_TitleSearch" xml:space="preserve">
+    <value>Search - </value>
+  </data>
+  <data name="TXT_TitleVariableDossier" xml:space="preserve">
+    <value>Variable Dossier - </value>
+  </data>
+  <data name="TXT_TitleVariableExplorer" xml:space="preserve">
+    <value>Variable Explorer - </value>
+  </data>
+  <data name="TXT_VariableCompare" xml:space="preserve">
+    <value>Variable Compare</value>
+  </data>
+  <data name="TXT_VariableHistory" xml:space="preserve">
+    <value>Variable History</value>
+  </data>
+  <data name="TXT_ConfigurationOpened" xml:space="preserve">
+    <value>Configuration Opened.</value>
+  </data>
+  <data name="TXT_DCColor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="TXT_DCExpression" xml:space="preserve">
+    <value>Expression</value>
+  </data>
+  <data name="TXT_DCLineNumber" xml:space="preserve">
+    <value>LineNumber</value>
+  </data>
+  <data name="TXT_DCLongDescription" xml:space="preserve">
+    <value>Long Description</value>
+  </data>
+  <data name="TXT_DCRule" xml:space="preserve">
+    <value>Rule</value>
+  </data>
+  <data name="TXT_DCRuleFile" xml:space="preserve">
+    <value>RuleFile</value>
+  </data>
+  <data name="TXT_DCScore" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="TXT_LabelVariableValidater" xml:space="preserve">
+    <value>Variable Validater - </value>
+  </data>
+  <data name="TXT_LibraryXls" xml:space="preserve">
+    <value>Library.xls</value>
+  </data>
+  <data name="TXT_MultipleVariables" xml:space="preserve">
+    <value> variables</value>
+  </data>
+  <data name="TXT_SingleVariable" xml:space="preserve">
+    <value>1 variable</value>
+  </data>
+  <data name="TXT_TitleVariableGenerator" xml:space="preserve">
+    <value>Variable Generator - </value>
+  </data>
+  <data name="TXT_TitleVariableLibrary" xml:space="preserve">
+    <value>Variable Library - </value>
+  </data>
+  <data name="TXT_ErrNoPcfFilesFound" xml:space="preserve">
+    <value>No WorkSets found For This WorkSpace :</value>
+  </data>
+  <data name="TXT_ErrNoUcfFilesFound" xml:space="preserve">
+    <value>No ucf files found in : </value>
+  </data>
+  <data name="TXT_ErrRolesFolderPointsToInvalidLocation" xml:space="preserve">
+    <value>Roles Folder points to invalid location :- {0}</value>
+  </data>
+  <data name="TXT_ErrWorkspacesFolderPointsToInvalidLocation" xml:space="preserve">
+    <value>Workspaces Folder points to invalid location :- {0}</value>
+  </data>
+  <data name="TXT_ExportVariableListToTextFile" xml:space="preserve">
+    <value>Export variable list to text file</value>
+  </data>
+  <data name="TXT_ExportWorkspaceDetailsToTextFile" xml:space="preserve">
+    <value>Export workspace details to text file</value>
+  </data>
+  <data name="TXT_ExtTxt" xml:space="preserve">
+    <value>.txt</value>
+  </data>
+  <data name="TXT_FileFilterCsv" xml:space="preserve">
+    <value>Excel File (*.csv)|*.csv|Excel Files (*.csv)|*.csv</value>
+  </data>
+  <data name="TXT_FileFilterJPEG" xml:space="preserve">
+    <value>JPEG File (*.jpg)|*.jpg|JPEG File (*.jpg)|*.jpg</value>
+  </data>
+  <data name="TXT_FileFilterTxt" xml:space="preserve">
+    <value>Text File (*.txt)|*.txt|Text Files (*.txt)|*.txt</value>
+  </data>
+  <data name="TXT_FilelistCsv" xml:space="preserve">
+    <value>-filelist.csv</value>
+  </data>
+  <data name="TXT_FilelistTxt" xml:space="preserve">
+    <value>-filelist.txt</value>
+  </data>
+  <data name="TXT_MsgSaveVariableListToImage" xml:space="preserve">
+    <value>Save Variable List to Image</value>
+  </data>
+  <data name="TXT_ProblemOpeningWorkspace" xml:space="preserve">
+    <value>There was a problem opening the workspace.</value>
+  </data>
+  <data name="TXT_ProblemSavingWorkspace1" xml:space="preserve">
+    <value>There was a problem saving the workspace.</value>
+  </data>
+  <data name="TXT_TitleError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="TXT_UntitledJpg" xml:space="preserve">
+    <value>untitled.jpg</value>
+  </data>
+  <data name="TXT_ErrWorkSetsFolderPointsToInvalidLocation" xml:space="preserve">
+    <value>Worksets Folder points to invalid location :- {0}</value>
+  </data>
+  <data name="TXT_CesettingsCfg" xml:space="preserve">
+    <value>cesettings.upf</value>
+  </data>
+  <data name="TXT_ConfigurationFileCFG" xml:space="preserve">
+    <value>Configuration File (*.cfg)|*.cfg|Configuration Files (*.cfg)|*.cfg</value>
+  </data>
+  <data name="TXT_ErrBadCharacterInVariableName" xml:space="preserve">
+    <value>INVALID VARIABLE DEFINITION - bad character in variable name</value>
+  </data>
+  <data name="TXT_ErrCannotParseThisLine" xml:space="preserve">
+    <value>Can't parse this line</value>
+  </data>
+  <data name="TXT_ErrCannotResolvePathInclude" xml:space="preserve">
+    <value>Can't resolve path include() -</value>
+  </data>
+  <data name="TXT_ErrCesettingsFailedToCreateCfg" xml:space="preserve">
+    <value>CESETTINGS.upf cannot be created at location
+
+{0}</value>
+  </data>
+  <data name="TXT_ErrChangesHaveBeenMadeTo" xml:space="preserve">
+    <value>Changes have been made to {0}. The workspace should be rescanned.</value>
+  </data>
+  <data name="TXT_ErrDivideByZero" xml:space="preserve">
+    <value>Divide by zero</value>
+  </data>
+  <data name="TXT_ErrFileHasBeenChanged" xml:space="preserve">
+    <value>{0} has been deleted. The workspace should be rescanned.</value>
+  </data>
+  <data name="TXT_ErrFunctionCallNotProcessed" xml:space="preserve">
+    <value>Function call not preceeded by a $( or ${ - </value>
+  </data>
+  <data name="TXT_ErrImbalancedParenthesisInExpression" xml:space="preserve">
+    <value>Imbalanced parenthesis in expression</value>
+  </data>
+  <data name="TXT_ErrInvalidValueInImpliedAppend" xml:space="preserve">
+    <value>ERROR - invalid value in implied append</value>
+  </data>
+  <data name="TXT_ErrLevelSettingOnIncludeStatement" xml:space="preserve">
+    <value>INVALID Level setting on Include statement. Value was ignored.</value>
+  </data>
+  <data name="TXT_ErrLineIgnoredDueToIFStructure" xml:space="preserve">
+    <value>Line ignored due to IF structure</value>
+  </data>
+  <data name="TXT_ErrMissingAssignmentOperator" xml:space="preserve">
+    <value>INVALID VARIABLE DEFINITION - missing assignment operator</value>
+  </data>
+  <data name="TXT_ErrMissingQuotesAroundText" xml:space="preserve">
+    <value>Missing quotes around text</value>
+  </data>
+  <data name="TXT_ErrModulusByZero" xml:space="preserve">
+    <value>Modulus zero error</value>
+  </data>
+  <data name="TXT_ErrNameShouldBeMinTwoChar" xml:space="preserve">
+    <value>INVALID VARIABLE DEFINITION - variable name must be at least 2 characters</value>
+  </data>
+  <data name="TXT_ErrNoSpaceInPath" xml:space="preserve">
+    <value>The Exists function can't have a space in the path. Try removing the space or use a variable.</value>
+  </data>
+  <data name="TXT_ErrNotProcessedDueToIFStructure" xml:space="preserve">
+    <value>Not processed due to IF structure</value>
+  </data>
+  <data name="TXT_ErrOperandTypeErrorWithDIVIDE" xml:space="preserve">
+    <value>Operand type error with DIVIDE</value>
+  </data>
+  <data name="TXT_ErrOperandTypeErrorWithMODULUS" xml:space="preserve">
+    <value>Operand type error with MODULUS</value>
+  </data>
+  <data name="TXT_ErrOperandTypeErrorWithMULTIPLY" xml:space="preserve">
+    <value>Operand type error with MULTIPLY</value>
+  </data>
+  <data name="TXT_ErrOperandTypeErrorWithSubraction" xml:space="preserve">
+    <value>Operand type error with subraction</value>
+  </data>
+  <data name="TXT_ErrRaised" xml:space="preserve">
+    <value>ERROR RAISED</value>
+  </data>
+  <data name="TXT_ErrTabCharBetween" xml:space="preserve">
+    <value>INVALID Preprocessor directive - tab character between % and directive name</value>
+  </data>
+  <data name="TXT_ErrUndefinedVariablesShouldNotBeUsedInThisContext" xml:space="preserve">
+    <value>Undefined variables should not be used in this context</value>
+  </data>
+  <data name="TXT_ErrUnknownDirectiveName" xml:space="preserve">
+    <value>INVALID Preproccessor Directive - unknown directive name</value>
+  </data>
+  <data name="TXT_ErrVarNameShouldNotContainNonStandardChars" xml:space="preserve">
+    <value>IMPROPER VARIABLE DEFINITION - variable name contains non standard characters</value>
+  </data>
+  <data name="TXT_ErrWithErrorMessage" xml:space="preserve">
+    <value>ERROR with %error message</value>
+  </data>
+  <data name="TXT_ErrWrongKindOfSlash" xml:space="preserve">
+    <value>Wrong kind of slash, will be replaced with /</value>
+  </data>
+  <data name="TXT_ErrWrongTextFileEncodingType" xml:space="preserve">
+    <value>Wrong text file encoding type : {0}</value>
+  </data>
+  <data name="TXT_ErrZeroLengthVariableName" xml:space="preserve">
+    <value>INVALID VARIABLE DEFINITION - zero length variable name</value>
+  </data>
+  <data name="TXT_ExportAppCfgFile" xml:space="preserve">
+    <value>Export Applications cfg file</value>
+  </data>
+  <data name="TXT_FileChanged" xml:space="preserve">
+    <value>File Changed</value>
+  </data>
+  <data name="TXT_FileDeleted" xml:space="preserve">
+    <value>File Deleted</value>
+  </data>
+  <data name="TXT_FinishedProcessingFile" xml:space="preserve">
+    <value>Finished Processing File</value>
+  </data>
+  <data name="TXT_MsgAttemptToLockAnUndefinedVariable" xml:space="preserve">
+    <value>Attempt to lock an undefined variable</value>
+  </data>
+  <data name="TXT_MsgAttemptToModifyLockedVariable" xml:space="preserve">
+    <value>Attempt to modify a locked variable</value>
+  </data>
+  <data name="TXT_MsgAttemptToUndefineLockedVariable" xml:space="preserve">
+    <value>Attempt to undefine a locked variable</value>
+  </data>
+  <data name="TXT_MsgAttemptToUndefineVariableThatDoesNotExist" xml:space="preserve">
+    <value>Attempt to undefine a variable that does not exist</value>
+  </data>
+  <data name="TXT_MsgCannotResolvePathExists" xml:space="preserve">
+    <value>Can't resolve path exists() - </value>
+  </data>
+  <data name="TXT_MsgCheckingFileExistance" xml:space="preserve">
+    <value>Checking file existance: {0} - returned </value>
+  </data>
+  <data name="TXT_MsgCheckingIfVariableExists" xml:space="preserve">
+    <value>Checking if variable ({0}) exists and does not equal 0 - returned </value>
+  </data>
+  <data name="TXT_MsgCheckingVariableExistance" xml:space="preserve">
+    <value>Checking variable existance ({0}) - returned </value>
+  </data>
+  <data name="TXT_MsgComparisonFailedDueToCaseSensitivity" xml:space="preserve">
+    <value>Comparison failed due to case sensitivity :</value>
+  </data>
+  <data name="TXT_MsgCriticalErrorProcessAborted" xml:space="preserve">
+    <value>Critical error, process aborted.</value>
+  </data>
+  <data name="TXT_MsgCriticalErrorRaisedOnLine" xml:space="preserve">
+    <value>There was a critical error raised in {0} on line {0}. </value>
+  </data>
+  <data name="TXT_MsgDuplicateVariableAssignment" xml:space="preserve">
+    <value>Duplicate variable assignment; value hasn't changed : </value>
+  </data>
+  <data name="TXT_MsgIfStructureIsSet" xml:space="preserve">
+    <value>IF structure set to " &amp; ProcessNextLine()</value>
+  </data>
+  <data name="TXT_MsgImbalancedParenthesisConvertFunctionToString" xml:space="preserve">
+    <value>Imbalanced parenthesis - (Convert function to string)</value>
+  </data>
+  <data name="TXT_MsgIncludeIgnoredAlreadyProcessed" xml:space="preserve">
+    <value>INCLUDE IGNORED - ALREADY PROCESSED : {0}</value>
+  </data>
+  <data name="TXT_MsgIncludeIgnoredFileNotFound" xml:space="preserve">
+    <value>INCLUDE IGNORED - FILE NOT FOUND : {0}</value>
+  </data>
+  <data name="TXT_MsgInvalidIfElseStructureElifWithinElse" xml:space="preserve">
+    <value>INVALID IF ELSE STRUCTURE - %elif within %else</value>
+  </data>
+  <data name="TXT_MsgInvalidIfElseStructureElifWithoutAnIf" xml:space="preserve">
+    <value>INVALID IF ELSE STRUCTURE - %elif without an %if</value>
+  </data>
+  <data name="TXT_MsgInvalidIfElseStructureElseWithoutIf" xml:space="preserve">
+    <value>INVALID IF ELSE STRUCTURE - %else without %if</value>
+  </data>
+  <data name="TXT_MsgInvalidIfElseStructureEndifWithoutIf" xml:space="preserve">
+    <value>INVALID IF ELSE STRUCTURE - %endif without %if</value>
+  </data>
+  <data name="TXT_MsgInvalidIfElseStructureMissingEndif" xml:space="preserve">
+    <value>INVALID IF ELSE STRUCTURE - missing %endif</value>
+  </data>
+  <data name="TXT_MsgInvalidIfElseStructureTooManyElse" xml:space="preserve">
+    <value>INVALID IF ELSE STRUCTURE - too many %else staments</value>
+  </data>
+  <data name="TXT_MsgInvalidLevelAssignment" xml:space="preserve">
+    <value>Invalid Level assignment : </value>
+  </data>
+  <data name="TXT_MsgInvalidUndefStatement" xml:space="preserve">
+    <value>Invalid %undef statement.</value>
+  </data>
+  <data name="TXT_MsgIsIncluding" xml:space="preserve">
+    <value> is including </value>
+  </data>
+  <data name="TXT_MsgLevelChangedTo" xml:space="preserve">
+    <value>Level changed to </value>
+  </data>
+  <data name="TXT_MsgNoFilesToINCLUDE" xml:space="preserve">
+    <value>No files to INCLUDE</value>
+  </data>
+  <data name="TXT_MsgPossibleHardcodedLocation" xml:space="preserve">
+    <value>Possible hardcoded location : </value>
+  </data>
+  <data name="TXT_MsgPossibleInvalidFileExtension" xml:space="preserve">
+    <value>Possible invalid file extension : </value>
+  </data>
+  <data name="TXT_MsgStartProcessing" xml:space="preserve">
+    <value>Start processing {0}</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineAND" xml:space="preserve">
+    <value>Unable to process line - &amp;&amp; AND</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineBASENAME" xml:space="preserve">
+    <value>Unable to process line - basename()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineBUILD" xml:space="preserve">
+    <value>Unable to process line - build()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineCONCAT" xml:space="preserve">
+    <value>Unable to process line - concat()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineDefined" xml:space="preserve">
+    <value>Unable to process line - defined()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineDEV" xml:space="preserve">
+    <value>Unable to process line - dev()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineDEVDIR" xml:space="preserve">
+    <value>Unable to process line - devdir()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineDIR" xml:space="preserve">
+    <value>Unable to process line - dir()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineElif" xml:space="preserve">
+    <value>Unable to process line - %elif</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineEqual" xml:space="preserve">
+    <value>Unable to process line - ==</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineEXISTS" xml:space="preserve">
+    <value>Unable to process line - exists()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineEXT" xml:space="preserve">
+    <value>Unable to process line - ext()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineFILENAME" xml:space="preserve">
+    <value>Unable to process line - filename()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineFIRST" xml:space="preserve">
+    <value>Unable to process line - first()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineGreaterThan" xml:space="preserve">
+    <value>Unable to process line - Greater Than</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineGreaterThanEqual" xml:space="preserve">
+    <value>Unable to process line - Greater Than or Equal</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineIf" xml:space="preserve">
+    <value>Unable to process line - %if</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineImpliedAppend" xml:space="preserve">
+    <value>Unable to process line - implied append</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineINCLUDE" xml:space="preserve">
+    <value>Unable to process line - include</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineINCLUDEBraces" xml:space="preserve">
+    <value>Unable to process line - include()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineLessThan" xml:space="preserve">
+    <value>Unable to process line - Less Than</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineLessThanEqual" xml:space="preserve">
+    <value>Unable to process line - Less Than or Equal</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineLevel" xml:space="preserve">
+    <value>Unable to process line - %level</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineLock" xml:space="preserve">
+    <value>Unable to process line - %lock</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineMATHADD" xml:space="preserve">
+    <value>Unable to process line (math) ADD </value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineMATHAND" xml:space="preserve">
+    <value>Unable to process line (math) AND</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineMATHDIVIDE" xml:space="preserve">
+    <value>Unable to process line (math) DIVIDE</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineMATHMODULUS" xml:space="preserve">
+    <value>Unable to process line (math) MODULUS</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineMATHMULIPLY" xml:space="preserve">
+    <value>Unable to process line (math) MULTIPLY</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineMATHOR" xml:space="preserve">
+    <value>Unable to process line (math) OR</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineMATHSHIFTRIGHT" xml:space="preserve">
+    <value>Unable to process line (math) SHIFTRIGHT</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineMATHSUBTRACT" xml:space="preserve">
+    <value>Unable to process line (math) SUBTRACT</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineMATHXOR" xml:space="preserve">
+    <value>Unable to process line (math) XOR</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineNOEXT" xml:space="preserve">
+    <value>Unable to process line - noext()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineNOT" xml:space="preserve">
+    <value>Unable to process line - ! NOT</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineNotEqual" xml:space="preserve">
+    <value>Unable to process line - !=</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineOR" xml:space="preserve">
+    <value>Unable to process line - || OR</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLinePARENTDEVDIR" xml:space="preserve">
+    <value>Unable to process line - parentdevdir()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLinePARENTDIR" xml:space="preserve">
+    <value>Unable to process line - parentdir()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineUndef" xml:space="preserve">
+    <value>Unable to process line - %undef</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineVariableDefinition" xml:space="preserve">
+    <value>Unable to process line - variable definition</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessThisIfBlock" xml:space="preserve">
+    <value>Unable to process this if block. Check for imbalanced parenthesis in previous lines.</value>
+  </data>
+  <data name="TXT_MsgUndefinedVariablesShouldNotBeUsedInThisContext" xml:space="preserve">
+    <value>Undefined variables should not be used in this context</value>
+  </data>
+  <data name="TXT_MsgVariableAssignmentIgnored" xml:space="preserve">
+    <value>Variable assignment ignored - variable already exists : </value>
+  </data>
+  <data name="TXT_MsgVariableContainsInconsistancy" xml:space="preserve">
+    <value>Variable contains inconsistent value types: {0} and {1}</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromExeLocation" xml:space="preserve">
+    <value>Variable created from exe location.</value>
+  </data>
+  <data name="TXT_MsgVariableDefinedFromProjectSelection" xml:space="preserve">
+    <value>Variable defined from project selection</value>
+  </data>
+  <data name="TXT_MsgVariableDefinedFromUserSelection" xml:space="preserve">
+    <value>Variable defined from user selection</value>
+  </data>
+  <data name="TXT_MsgVariableDefinedInCommandline" xml:space="preserve">
+    <value>Variable defined in commandline</value>
+  </data>
+  <data name="TXT_MsgVariableLocked" xml:space="preserve">
+    <value>Variable locked</value>
+  </data>
+  <data name="TXT_MsgVariableReferencesItself" xml:space="preserve">
+    <value>Variable references itself</value>
+  </data>
+  <data name="TXT_MsgVariableUndefined" xml:space="preserve">
+    <value>Variable undefined</value>
+  </data>
+  <data name="TXT_MsgVariableValueChanged" xml:space="preserve">
+    <value>Variable value changed  = </value>
+  </data>
+  <data name="TXT_MsgWithLevel" xml:space="preserve">
+    <value>with level </value>
+  </data>
+  <data name="TXT_ProblemUnderstandingLine" xml:space="preserve">
+    <value>Problem understanding line</value>
+  </data>
+  <data name="TXT_VariableReferenced" xml:space="preserve">
+    <value>Variable referenced</value>
+  </data>
+  <data name="TXT_WarningBackSlashRemoved" xml:space="preserve">
+    <value>Warning, backslash removed from the end of line</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductConfigVarName" xml:space="preserve">
+    <value>Variable created from Configuration Variable Name.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductDirectoryName" xml:space="preserve">
+    <value>Variable created from Directory Name.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductFileTypeName" xml:space="preserve">
+    <value>Variable created from File Type Name.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductFullMarketingName" xml:space="preserve">
+    <value>Variable created from Full Marketing Name.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromLocalUserTempPath" xml:space="preserve">
+    <value>Variable created from Local User Temp Path.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductCopyRightYears" xml:space="preserve">
+    <value>Variable created from CopyRight Years.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductFileBaseName" xml:space="preserve">
+    <value>Variable created from File Base Name.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductName" xml:space="preserve">
+    <value>Variable created from Product Name.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductShortName" xml:space="preserve">
+    <value>Variable created from Product Short Name.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductTitleBarName" xml:space="preserve">
+    <value>Variable created from Title Bar Name.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProduct_Version" xml:space="preserve">
+    <value>Variable created from Version.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductShortMarketingName" xml:space="preserve">
+    <value>Variable created from Short Marketing Name.</value>
+  </data>
+  <data name="TXT_LicenseErrorEndOfTrailVersion" xml:space="preserve">
+    <value>Trial Version session will be ended within next 15 sec.  </value>
+  </data>
+  <data name="TXT_ProductName" xml:space="preserve">
+    <value>Bentley Configuration Explorer</value>
+  </data>
+  <data name="TXT_UnableToGetVersionNumberForConfExp" xml:space="preserve">
+    <value>Unable to get  version number for Bentley Configuration Explorer.</value>
+  </data>
+  <data name="TXT_OldVariableDossier" xml:space="preserve">
+    <value>Tabbed Variable Dossier</value>
+  </data>
+  <data name="TXT_CommandOptions" xml:space="preserve">
+    <value>Command Options</value>
+  </data>
+  <data name="TXT_EXEPath" xml:space="preserve">
+    <value>Application EXE Name</value>
+  </data>
+  <data name="TXT_IconFile" xml:space="preserve">
+    <value>Icon File</value>
+  </data>
+  <data name="TXT_IconNumber" xml:space="preserve">
+    <value>Icon Number</value>
+  </data>
+  <data name="TXT_InstalledProductName" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="TXT_InstalledProductVersion" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="TXT_VertPath" xml:space="preserve">
+    <value>Vertical Path</value>
+  </data>
+  <data name="TXT_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="TXT_InstalledBentleyApplications" xml:space="preserve">
+    <value>Installed Bentley Applications</value>
+  </data>
+  <data name="TXT_OpenApplicationManager" xml:space="preserve">
+    <value>Open Application Manager</value>
+  </data>
+  <data name="TXT_Process" xml:space="preserve">
+    <value>Process</value>
+  </data>
+  <data name="TXT_ProcessConfiguration" xml:space="preserve">
+    <value>Process Configuration</value>
+  </data>
+  <data name="TXT_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="TXT_TipAddAppsByDragAndDrop" xml:space="preserve">
+    <value>Tip : Add applications by dragging and dropping application shortcuts from the Start Menu</value>
+  </data>
+  <data name="TXT_TipSelectMultiApps" xml:space="preserve">
+    <value>Tip : To select mulitiple applications, hold down the Ctrl key while selecting.</value>
+  </data>
+  <data name="TXT_ShortcutName" xml:space="preserve">
+    <value>Shortcut Name:</value>
+  </data>
+  <data name="TXT_MsgFileCreateFailed" xml:space="preserve">
+    <value>File Creation Failure</value>
+  </data>
+  <data name="TXT_ArrangeAll" xml:space="preserve">
+    <value>Arrange All</value>
+  </data>
+  <data name="TXT_CloseAllWindows" xml:space="preserve">
+    <value>Close All Windows</value>
+  </data>
+  <data name="TXT_GroupedInMainWindow" xml:space="preserve">
+    <value>Grouped in Main Window</value>
+  </data>
+  <data name="TXT_ResetPosition" xml:space="preserve">
+    <value>Reset Position</value>
+  </data>
+  <data name="TXT_StatusBarButton" xml:space="preserve">
+    <value>Status Bar</value>
+  </data>
+  <data name="TXT_SwitchWindows" xml:space="preserve">
+    <value>Switch Windows</value>
+  </data>
+  <data name="TXT_TabbedVariableDossier" xml:space="preserve">
+    <value>Tabbed Variable Dossier</value>
+  </data>
+  <data name="TXT_Copyright" xml:space="preserve">
+    <value>Copyright (c) 2024 Bentley Systems, Incorporated. All Rights Reserved.</value>
+  </data>
+  <data name="TXT_CopyrightNotice" xml:space="preserve">
+    <value>Including software, file formats, and audio-visual displays; may be used pursuant to applicable software license agreement; contains confidential and proprietary information of Bentley Systems and/or third parties which is protected by copyright and trade secret law and may not be provided or otherwise made available without proper authorization.
+
+TRADEMARK NOTICE
+Bentley, the Bentley logo, and MicroStation are registered or non-registered trademarks of Bentley Systems, Inc. or Bentley Software, Inc. All other marks are the property of their respective owners.</value>
+  </data>
+  <data name="TXT_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="TXT_DCAppType" xml:space="preserve">
+    <value>App Type</value>
+  </data>
+  <data name="TXT_NoProject" xml:space="preserve">
+    <value>No Project</value>
+  </data>
+  <data name="TXT_NoWorkset" xml:space="preserve">
+    <value>No Workset</value>
+  </data>
+  <data name="TXT_NoWorkspace" xml:space="preserve">
+    <value>No Workspace</value>
+  </data>
+  <data name="TXT_AutoloadWorkspace" xml:space="preserve">
+    <value>Autoload Last Workspace</value>
+  </data>
+  <data name="TXT_EchoStatement" xml:space="preserve">
+    <value>Echo</value>
+  </data>
+  <data name="TXT_MsgReadingRegistryEntry" xml:space="preserve">
+    <value>Reading Registry Entry</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineFIRSTDIRPIECE" xml:space="preserve">
+    <value>Unable to process line - lastdirpiece()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineLASTDIRPIECE" xml:space="preserve">
+    <value>Unable to process line - lastdirpiece()</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineREGEISTRYREAD" xml:space="preserve">
+    <value>Unable To Process Line REGEISTRYREAD</value>
+  </data>
+  <data name="TXT_PredefinedCfgPath" xml:space="preserve">
+    <value>Predefined .cfg path</value>
+  </data>
+  <data name="TXT_TitleFileViewer" xml:space="preserve">
+    <value>File Viewer - </value>
+  </data>
+  <data name="TXT_FileFilterXlsx" xml:space="preserve">
+    <value>Excel File (*xlsx)|*.xlsx|Excel Files (*.xlsx)|*.xlsx</value>
+  </data>
+  <data name="TXT_FileFilterPNG" xml:space="preserve">
+    <value>PNG File (*.png)|*.png|PNG File (*.png)|*.png</value>
+  </data>
+  <data name="TXT_MsgSaveFileTreeToImage" xml:space="preserve">
+    <value>Save File Tree to Image</value>
+  </data>
+  <data name="TXT_UntitledPng" xml:space="preserve">
+    <value>untitled.png</value>
+  </data>
+  <data name="TXT_AutoloadSelectorWorkspace" xml:space="preserve">
+    <value>Autoload Workspace Selector</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductGroupName" xml:space="preserve">
+    <value>Variable created from Product One Group Name.</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductMarketingSuffixName" xml:space="preserve">
+    <value>test</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductMarketingSuffixShortName" xml:space="preserve">
+    <value>test</value>
+  </data>
+  <data name="TXT_MsgVariableCreatedFromProductSubGroupName" xml:space="preserve">
+    <value>Variable created from Product One SubGroup Name.</value>
+  </data>
+  <data name="TXT_DCConfigurationRoot" xml:space="preserve">
+    <value>Configuration Root</value>
+  </data>
+  <data name="TXT_DCLastRoleSeleted" xml:space="preserve">
+    <value>Last Role Selected</value>
+  </data>
+  <data name="TXT_DCLastWorksetSeleted" xml:space="preserve">
+    <value>Last WorkSet Selected</value>
+  </data>
+  <data name="TXT_DCLastWorkspaceSeleted" xml:space="preserve">
+    <value>Last Workspace Selected</value>
+  </data>
+  <data name="TXT_DCPredefinedCfgName" xml:space="preserve">
+    <value>Predefined Cfg Name</value>
+  </data>
+  <data name="TXT_VariablesDBNames" xml:space="preserve">
+    <value>Variable CSV Name(s)</value>
+  </data>
+  <data name="TXT_DCVarsDBNames" xml:space="preserve">
+    <value>Variable CSV Name(s)</value>
+  </data>
+  <data name="TXT_NoRole" xml:space="preserve">
+    <value>No Role</value>
+  </data>
+  <data name="TXT_ErrFindingWorkspacesConfigFolder" xml:space="preserve">
+    <value>Error finding Workspaces Config folder</value>
+  </data>
+  <data name="TXT_MsgUnableToProcessLineBACKTRACK" xml:space="preserve">
+    <value>Unable to process line - ..</value>
+  </data>
+</root>

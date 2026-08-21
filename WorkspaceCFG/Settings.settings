@@ -1,0 +1,258 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ChosenApplication" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ChosenApplicationPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LastWorkspaceDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ChosenWorkspace" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ChosenWorkset" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WRK1_OP1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WRK1_OP2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WRK2_OP1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WRK2_OP2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WRK1_ChosenApplication" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WRK1_ChosenWorkspace" Type="System.String" Scope="User">
+      <Value Profile="(Default)">untitled</Value>
+    </Setting>
+    <Setting Name="WRK1_ChosenWorkset" Type="System.String" Scope="User">
+      <Value Profile="(Default)">untitled</Value>
+    </Setting>
+    <Setting Name="WRK2_ChosenApplication" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WRK2_ChosenWorkspace" Type="System.String" Scope="User">
+      <Value Profile="(Default)">untitled</Value>
+    </Setting>
+    <Setting Name="WRK2_ChosenWorkset" Type="System.String" Scope="User">
+      <Value Profile="(Default)">untitled</Value>
+    </Setting>
+    <Setting Name="WRK1_ChosenFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WRK2_ChosenFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VE_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="VE_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">WindowsDefaultLocation</Value>
+    </Setting>
+    <Setting Name="VE_WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="VE_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">1023, 881</Value>
+    </Setting>
+    <Setting Name="VC_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="VC_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">WindowsDefaultLocation</Value>
+    </Setting>
+    <Setting Name="VC_WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="VC_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">897, 660</Value>
+    </Setting>
+    <Setting Name="VE_Split1_Dist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">340</Value>
+    </Setting>
+    <Setting Name="VC_Split1_Dist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">406</Value>
+    </Setting>
+    <Setting Name="VC_Split2_Dist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">406</Value>
+    </Setting>
+    <Setting Name="VC_Split3_Dist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">356</Value>
+    </Setting>
+    <Setting Name="VR_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="VR_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">Manual</Value>
+    </Setting>
+    <Setting Name="VR_WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="VR_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">759, 763</Value>
+    </Setting>
+    <Setting Name="VR_Split2_Dist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">185</Value>
+    </Setting>
+    <Setting Name="VR_Split3_Dist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">390</Value>
+    </Setting>
+    <Setting Name="ST_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="ST_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">Manual</Value>
+    </Setting>
+    <Setting Name="GC_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="GC_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">Manual</Value>
+    </Setting>
+    <Setting Name="EH_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="EH_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">Manual</Value>
+    </Setting>
+    <Setting Name="EH_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">833, 668</Value>
+    </Setting>
+    <Setting Name="EH_WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="FV_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="FV_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">Manual</Value>
+    </Setting>
+    <Setting Name="FV_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">834, 659</Value>
+    </Setting>
+    <Setting Name="FV_WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="FH_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="FH_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">891, 551</Value>
+    </Setting>
+    <Setting Name="FH_WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="MAIN_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="Main_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">WindowsDefaultLocation</Value>
+    </Setting>
+    <Setting Name="PS_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="PS_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">CenterParent</Value>
+    </Setting>
+    <Setting Name="Shortcut_Args" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Shortcut_Out" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\</Value>
+    </Setting>
+    <Setting Name="FH_Split1_Dist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">161</Value>
+    </Setting>
+    <Setting Name="VL_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">Manual</Value>
+    </Setting>
+    <Setting Name="VL_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="VL_WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="VL_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">935, 729</Value>
+    </Setting>
+    <Setting Name="Loc_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="Loc_WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="Loc_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">677, 295</Value>
+    </Setting>
+    <Setting Name="SRCH_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="SRCH_WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="SRCH_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">775, 425</Value>
+    </Setting>
+    <Setting Name="VG_StartPos" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">Manual</Value>
+    </Setting>
+    <Setting Name="VG_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">40, 40</Value>
+    </Setting>
+    <Setting Name="VG_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">653, 447</Value>
+    </Setting>
+    <Setting Name="VG_WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="Chosen_OOB" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Chosen_LOCAL" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VE_C1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VE_C2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VE_C3" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VE_C4" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VE_C5" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VE_C6" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="GroupWindows" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VE_MULTILINE" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ResolveFilePaths" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AutoloadLastWorkspace" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AutoloadWorkspaceSelector" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,7 @@
+setseed.exe
+DistributedProcessingController.exe
+dgcatalogeditor.exe
+dgdefinitioneditor.exe
+jsclsedt.exe
+intmgr.exe
+pcstudio.exe
