@@ -39,7 +39,7 @@ namespace WorkspaceCFG
         // ---------------+---------------+---------------+---------------+---------------+-------
         public static string GetExePath()
         {
-            return Assembly.GetExecutingAssembly().Location;
+            return Environment.ProcessPath ?? Application.ExecutablePath;
         }
 
         // ---------------------------------------------------------------------------------------
@@ -47,8 +47,7 @@ namespace WorkspaceCFG
         // ---------------+---------------+---------------+---------------+---------------+-------
         public static string GetExeFolder()
         {
-            string argpath = Assembly.GetExecutingAssembly().Location;
-            return UtilitiesPath.GetDirectoryName(ref argpath);
+            return AppContext.BaseDirectory;
         }
 
         public static string GetResourceString(string resourceName)
