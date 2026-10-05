@@ -39,7 +39,7 @@ jobs:
       - name: Publish
         shell: pwsh
         run: |
-          & $env:MSBUILD_PATH WorkspaceCFG\WorkspaceCFG.csproj /restore /t:Publish /p:RestoreLockedMode=true /p:Configuration=Release /p:Platform=x64 /p:PublishProfile=WorkspaceCFG\Properties\PublishProfiles\FolderProfile.pubxml
+          & $env:MSBUILD_PATH WorkspaceCFG\WorkspaceCFG.csproj /restore /t:Publish /p:Configuration=Release /p:Platform=x64 /p:PublishProfile=WorkspaceCFG\Properties\PublishProfiles\FolderProfile.pubxml
 
       - name: Package release
         shell: pwsh
