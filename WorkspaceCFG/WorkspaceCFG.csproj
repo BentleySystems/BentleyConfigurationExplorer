@@ -9,6 +9,7 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <LangVersion>latest</LangVersion>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     <StartupObject>WorkspaceCFG.MainType</StartupObject>
     <RootNamespace>WorkspaceCFG</RootNamespace>
     <AssemblyName>ConfigurationExplorer</AssemblyName>
