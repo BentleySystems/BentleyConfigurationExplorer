@@ -6,6 +6,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -434,6 +435,7 @@ namespace WorkspaceCFG
             }
         }
 
+        [RequiresAssemblyFiles("Product metadata must be read from an assembly stored on disk.")]
         public void SetProductInfo(ref Type classType)
         {
             if (classType != null)
@@ -575,6 +577,7 @@ namespace WorkspaceCFG
             }
         }
 
+        [RequiresAssemblyFiles("Product metadata must be read from an assembly stored on disk.")]
         public object GetPropertyInfoValue(ref Type classType, string name)
         {
             return classType == null ? null :
