@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------------------------------------
 using System.Drawing;
 using System.IO;
+using System.Xml.Linq;
 
 namespace WorkspaceCFG
 {
@@ -78,10 +79,9 @@ namespace WorkspaceCFG
             }
         }
 
-        private static string LimitLength(ref string str)
+        private static string XmlText(string value)
         {
-            // Remove ", >, < from the string
-            return str.Replace("\"", "").Replace(">", "").Replace("<", "");
+            return new XText(value ?? "").ToString();
         }
 
         private static void WriteCells(ref StreamWriter streamWriter, System.Windows.Forms.DataGridView grdView)
@@ -111,9 +111,7 @@ namespace WorkspaceCFG
                         // Check for null cell and change it to empty to avoid error
                         if (string.IsNullOrEmpty(cellText))
                             cellText = "";
-                        string localLimitLength() { string argstr = cellText.ToString(); var ret = LimitLength(ref argstr); return ret; }
-
-                        streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"" + cellstyle + "\">" + "<ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", localLimitLength()));
+                        streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"" + cellstyle + "\">" + "<ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", XmlText(cellText)));
                     }
                 }
                 streamWriter.WriteLine("    </ss:Row>");
@@ -143,11 +141,11 @@ namespace WorkspaceCFG
                 {
                     if (DG1.Columns[intCol].Visible)
                     {
-                        cellText = DG1[intCol, i].Value.ToString();
+                        cellText = DG1[intCol, i].Value?.ToString();
                         // Check for null cell and change it to empty to avoid error
                         if (string.IsNullOrEmpty(cellText))
                             cellText = "";
-                        streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"" + cellstyle + "\">" + "<ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", cellText.ToString()));
+                        streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"" + cellstyle + "\">" + "<ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", XmlText(cellText)));
                     }
                 }
 
@@ -158,11 +156,11 @@ namespace WorkspaceCFG
                 {
                     if (DG2.Columns[intCol].Visible)
                     {
-                        cellText = DG2[intCol, i].Value.ToString();
+                        cellText = DG2[intCol, i].Value?.ToString();
                         // Check for null cell and change it to empty to avoid error
                         if (string.IsNullOrEmpty(cellText))
                             cellText = "";
-                        streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"" + cellstyle + "\">" + "<ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", cellText.ToString()));
+                        streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"" + cellstyle + "\">" + "<ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", XmlText(cellText)));
                     }
                 }
 
@@ -185,7 +183,7 @@ namespace WorkspaceCFG
 
             streamWriter.WriteLine("    <ss:Row>");
             for (int i = 0, loopTo1 = grdView.Columns.Count - 1; i <= loopTo1; i++)
-                streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"1\"><ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", grdView.Columns[i].HeaderText));
+                streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"1\"><ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", XmlText(grdView.Columns[i].HeaderText)));
             streamWriter.WriteLine("    </ss:Row>");
         }
 
@@ -221,14 +219,14 @@ namespace WorkspaceCFG
             {
                 if (DG1.Columns[i].Visible)
                 {
-                    streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"1\"><ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", DG1.Columns[i].HeaderText));
+                    streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"1\"><ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", XmlText(DG1.Columns[i].HeaderText)));
                 }
             }
             for (int i = 0, loopTo3 = DG1.Columns.Count - 1; i <= loopTo3; i++)
             {
                 if (DG2.Columns[i].Visible)
                 {
-                    streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"1\"><ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", DG2.Columns[i].HeaderText));
+                    streamWriter.WriteLine(string.Format("      <ss:Cell ss:StyleID=\"1\"><ss:Data ss:Type=\"String\">{0}</ss:Data></ss:Cell>", XmlText(DG2.Columns[i].HeaderText)));
                 }
             }
             streamWriter.WriteLine("    </ss:Row>");
@@ -247,7 +245,7 @@ namespace WorkspaceCFG
             WriteStyles(ref streamWriter);
 
             // Write the worksheet contents
-            streamWriter.WriteLine("<ss:Worksheet ss:Name=\"" + SheetName + "\">");
+            streamWriter.WriteLine("<ss:Worksheet ss:" + new XAttribute("Name", SheetName ?? "") + ">");
             streamWriter.WriteLine("  <ss:Table>");
         }
 

@@ -146,6 +146,8 @@ namespace WorkspaceCFG
             if (_workspace is null)
                 return;
 
+            _workspace.ValidateFileGraph();
+
             {
                 var withBlock = TreeView1;
                 withBlock.BeginUpdate();

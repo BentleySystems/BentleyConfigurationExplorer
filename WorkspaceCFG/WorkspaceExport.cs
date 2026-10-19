@@ -101,7 +101,11 @@ namespace WorkspaceCFG
             try
             {
                 string json = File.ReadAllText(path);
-                workspace = JsonConvert.DeserializeObject<CFGConfiguration>(json, WorkspaceJsonSettings);
+                CFGConfiguration loaded = JsonConvert.DeserializeObject<CFGConfiguration>(json, WorkspaceJsonSettings);
+                if (loaded == null)
+                    throw new JsonSerializationException("Workspace must not be null.");
+                loaded.ValidateFileGraph();
+                workspace = loaded;
             }
             catch (Exception ex)
             {

@@ -22,11 +22,60 @@ namespace WorkspaceCFG
     [JsonObject(MemberSerialization.Fields)]
     public class CFGConfiguration
     {
+        internal const int MaxFileDepth = 64;
+        internal const int MaxConfigurationFiles = 10000;
+
+        internal void ValidateFileGraph()
+        {
+            if (CFGFiles == null || CFGFiles.Count > MaxConfigurationFiles)
+                throw new JsonSerializationException("Invalid workspace file graph size.");
+
+            var files = new HashSet<CFGFile>();
+            foreach (object entry in CFGFiles)
+            {
+                if (entry is not CFGFile file || file.ChildFiles == null || !files.Add(file))
+                    throw new JsonSerializationException("Invalid workspace file graph entry.");
+            }
+
+            var children = new HashSet<CFGFile>();
+            foreach (CFGFile file in files)
+            {
+                foreach (object entry in file.ChildFiles)
+                {
+                    if (entry is not CFGFile child || !files.Contains(child) || !children.Add(child))
+                        throw new JsonSerializationException("Invalid or repeated workspace child file.");
+                }
+            }
+
+            var pending = new Stack<(CFGFile File, int Depth)>();
+            foreach (CFGFile file in files)
+            {
+                if (!children.Contains(file))
+                    pending.Push((file, 0));
+            }
+
+            int visited = 0;
+            while (pending.Count > 0)
+            {
+                var current = pending.Pop();
+                if (current.Depth > MaxFileDepth || current.File.Depth != current.Depth)
+                    throw new JsonSerializationException("Invalid workspace file depth.");
+
+                visited++;
+                foreach (CFGFile child in current.File.ChildFiles)
+                    pending.Push((child, current.Depth + 1));
+            }
+
+            if (visited != files.Count)
+                throw new JsonSerializationException("Cyclic workspace child-file graph.");
+        }
 
         // ---------------------------------------------------------------------------------------
         // Private Members
         // ---------------+---------------+---------------+---------------+---------------+-------
         private int _passCount;
+        [JsonIgnore]
+        private HashSet<string> _activeFilePaths;
 
         // ---------------------------------------------------------------------------------------
         // Public Members
@@ -966,6 +1015,40 @@ namespace WorkspaceCFG
         // ---------------+---------------+---------------+---------------+---------------+-------
         public void ProcessFile(string path, CFGFile ParentFile, int level = -999)
         {
+            if (AbortProcessing || string.IsNullOrWhiteSpace(path))
+                return;
+
+            path = Path.GetFullPath(path);
+            _activeFilePaths ??= new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            string rejection = null;
+            if (_activeFilePaths.Contains(path))
+                rejection = "Recursive configuration include: " + path;
+            else if (_activeFilePaths.Count > MaxFileDepth || ParentFile?.Depth >= MaxFileDepth)
+                rejection = "Configuration include depth limit exceeded: " + path;
+            else if (CFGFiles.Count >= MaxConfigurationFiles)
+                rejection = "Configuration file processing limit exceeded: " + path;
+
+            if (rejection != null)
+            {
+                AbortProcessing = true;
+                var eventType = CFGEnums.CFGEventType.cfgError;
+                AddEvent(ref eventType, ref rejection, file: ParentFile);
+                return;
+            }
+
+            _activeFilePaths.Add(path);
+            try
+            {
+                ProcessFileCore(path, ParentFile, level);
+            }
+            finally
+            {
+                _activeFilePaths.Remove(path);
+            }
+        }
+
+        private void ProcessFileCore(string path, CFGFile ParentFile, int level)
+        {
             // Create a new cfg file object
             CFGFile cFile;
 
@@ -989,13 +1072,6 @@ namespace WorkspaceCFG
                 string argvarname = "";
                 this.AddEvent(ref argetype, ref argdescription, line: argline, file: argfile, variable: argvariable, varname: argvarname);
             }
-
-            // Removed to allow recursive processing of .cfg files.  V8i did not allow recurcive files, but CONNECT does.
-            // Check to see if the file has been processed already
-            // If HasFileBeenProcessed(path) Then
-            // AddEvent(CFGEventType.cfgMessage, String.Format(CEResource.TXT_MsgIncludeIgnoredAlreadyProcessed, path))
-            // Exit Sub
-            // End If
 
             // Check to see if file exists
             if (File.Exists(path) == false)

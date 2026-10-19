@@ -5,6 +5,8 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
+using System.Xml.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WorkspaceCFG;
@@ -16,6 +18,7 @@ internal static class Program
             .GetField("WorkspaceJsonSettings", BindingFlags.NonPublic | BindingFlags.Static)
             .GetValue(null);
 
+    [STAThread]
     private static int Main(string[] args)
     {
         string directory = Path.Combine(Path.GetTempPath(), "BCE-persistence-" + Guid.NewGuid());
@@ -38,6 +41,8 @@ internal static class Program
             File.WriteAllText(path, legacy);
             AssertGraph(Load(path));
             Console.WriteLine("PASS: existing JSON workspace format remains readable");
+
+            AssertInvalidFileGraphs(directory);
 
             string deniedType = typeof(ConstructionProbe).AssemblyQualifiedName;
             var probe = new JObject { ["$type"] = deniedType };
@@ -80,6 +85,8 @@ internal static class Program
             }
             AssertSafeReload(directory);
             AssertSafeEditors(directory);
+            AssertSafeSpreadsheetExport(directory);
+            AssertSafeIncludes(directory);
             GC.Collect();
             GC.WaitForPendingFinalizers();
             Console.WriteLine("PASS: partially deserialized models can be finalized safely");
@@ -150,6 +157,92 @@ internal static class Program
             Environment.CurrentDirectory = previousDirectory;
             Environment.SetEnvironmentVariable("PATH", previousPath);
         }
+    }
+
+    private static void AssertSafeSpreadsheetExport(string directory)
+    {
+        string injection = "</ss:Data></ss:Cell><ss:Cell ss:Formula=\"=1+1\"><ss:Data ss:Type=\"String\">injected";
+        string special = "& < > \" ' =1+1";
+        using var first = new DataGridView { AllowUserToAddRows = false };
+        using var second = new DataGridView { AllowUserToAddRows = false };
+        first.Columns.Add("value", special);
+        second.Columns.Add("value", injection);
+        first.Rows.Add(injection);
+        second.Rows.Add(special);
+        string sheetName = "Review\" ss:Injected=\"true & < >";
+        string path = Path.Combine(directory, "spreadsheet.xml");
+        foreach (bool combined in new[] { false, true })
+        {
+            if (combined)
+                ExcelExporter.DataGridExport(first, second, ref sheetName, path);
+            else
+                ExcelExporter.DataGridExport(first, ref sheetName, path);
+
+            XDocument document = XDocument.Load(path);
+            XNamespace spreadsheet = "urn:schemas-microsoft-com:office:spreadsheet";
+            XElement worksheet = document.Descendants(spreadsheet + "Worksheet").Single();
+            Assert((string)worksheet.Attribute(spreadsheet + "Name") == sheetName && worksheet.Attributes().Count() == 1,
+                "Worksheet name was interpreted as XML attributes.");
+            XElement[] cells = document.Descendants(spreadsheet + "Cell").ToArray();
+            Assert(cells.Length == (combined ? 4 : 2), "Cell text injected extra spreadsheet cells.");
+            Assert(!document.Descendants().Attributes().Any(attribute => attribute.Name.LocalName == "Formula"),
+                "Cell text was interpreted as a formula attribute.");
+            string[] values = cells.Select(cell => cell.Element(spreadsheet + "Data").Value).ToArray();
+            Assert(values.Contains(injection) && values.Contains(special), "Export did not preserve literal cell/header text.");
+            Assert(cells.All(cell => (string)cell.Element(spreadsheet + "Data").Attribute(spreadsheet + "Type") == "String"),
+                "Untrusted values were not exported as strings.");
+        }
+        Console.WriteLine("PASS: both spreadsheet exports preserve literal text and reject XML/formula injection");
+    }
+
+    private static void AssertSafeIncludes(string directory)
+    {
+        string self = Path.Combine(directory, "self.cfg");
+        File.WriteAllText(self, "%include SELF.cfg");
+        var workspace = new CFGConfiguration();
+        workspace.ProcessFile(Path.Combine(directory, ".", "self.cfg"), null);
+        Assert(workspace.AbortProcessing && workspace.CFGFiles.Count == 1 && workspace.ErrorCount > 0,
+            "Self-include was not stopped with a recorded error. Abort=" + workspace.AbortProcessing +
+            ", Files=" + workspace.CFGFiles.Count + ", Errors=" + workspace.ErrorCount + ", Events=" +
+            string.Join("; ", workspace.CFGEvents.Cast<CFGEvent>().Select(cfgEvent => cfgEvent.Description)));
+
+        string first = Path.Combine(directory, "mutual-first.cfg");
+        string second = Path.Combine(directory, "mutual-second.cfg");
+        File.WriteAllText(first, "%include mutual-second.cfg");
+        File.WriteAllText(second, "%include mutual-first.cfg");
+        workspace = new CFGConfiguration();
+        workspace.ProcessFile(first, null);
+        Assert(workspace.AbortProcessing && workspace.CFGFiles.Count == 2, "Mutual include cycle was not stopped.");
+        Console.WriteLine("PASS: normalized self-includes and mutual include cycles stop with bounded processing");
+
+        string leaf = Path.Combine(directory, "leaf.cfg");
+        File.WriteAllText(leaf, "INCLUDE_TEST = safe");
+        workspace.AbortProcessing = false;
+        workspace.ProcessFile(leaf, null);
+        Assert(!workspace.AbortProcessing && workspace.GetVariable("INCLUDE_TEST")?.Value == "safe",
+            "An aborted include chain left stale active paths.");
+        string repeat = Path.Combine(directory, "repeat.cfg");
+        File.WriteAllText(repeat, "%include leaf.cfg" + Environment.NewLine + "%include leaf.cfg");
+        workspace = new CFGConfiguration();
+        workspace.ProcessFile(repeat, null);
+        Assert(!workspace.AbortProcessing && workspace.CFGFiles.Count == 3, "Legitimate repeated includes were blocked.");
+        Console.WriteLine("PASS: completed files can be included again and active include state unwinds after abort");
+
+        for (int depth = 0; depth <= 65; depth++)
+        {
+            string contents = depth == 65 ? "DEPTH_TEST = safe" : "%include depth-" + (depth + 1) + ".cfg";
+            File.WriteAllText(Path.Combine(directory, "depth-" + depth + ".cfg"), contents);
+        }
+        workspace = new CFGConfiguration();
+        workspace.ProcessFile(Path.Combine(directory, "depth-0.cfg"), null);
+        Assert(workspace.AbortProcessing && workspace.CFGFiles.Count == 65, "Include depth limit was not enforced.");
+
+        workspace = new CFGConfiguration();
+        for (int count = 0; count < 10000; count++)
+            workspace.CFGFiles.Add(new CFGFile(ref workspace));
+        workspace.ProcessFile(leaf, null);
+        Assert(workspace.AbortProcessing && workspace.CFGFiles.Count == 10000, "Total file-processing limit was not enforced.");
+        Console.WriteLine("PASS: include depth and total file-processing budgets are enforced");
     }
 
     private static void AssertSafeReload(string directory)
@@ -223,7 +316,7 @@ internal static class Program
     {
         var workspace = new CFGConfiguration { Description = "Regression workspace" };
         var parent = new CFGFile(ref workspace) { Name = "parent.cfg" };
-        var child = new CFGFile(ref workspace) { Name = "child.cfg", ParentFile = parent };
+        var child = new CFGFile(ref workspace) { Name = "child.cfg", ParentFile = parent, Depth = 1 };
         parent.ChildFiles.Add(child);
         workspace.CFGFiles.Add(parent);
         workspace.CFGFiles.Add(child);
@@ -274,6 +367,70 @@ internal static class Program
                 })
             }
         };
+    }
+
+    private static void AssertInvalidFileGraphs(string directory)
+    {
+        string path = Path.Combine(directory, "invalid-graph.bcf");
+        var cyclic = new CFGConfiguration();
+        var root = new CFGFile(ref cyclic) { Name = "self.cfg" };
+        cyclic.CFGFiles.Add(root);
+        root.ChildFiles.Add(root);
+        AssertGraphRejected(cyclic, path);
+
+        var mutual = CreateWorkspace();
+        ((CFGFile)mutual.CFGFiles[1]).ChildFiles.Add(mutual.CFGFiles[0]);
+        AssertGraphRejected(mutual, path);
+
+        var repeated = CreateWorkspace();
+        var parent = (CFGFile)repeated.CFGFiles[0];
+        parent.ChildFiles.Add(parent.ChildFiles[0]);
+        AssertGraphRejected(repeated, path);
+
+        var inconsistent = CreateWorkspace();
+        ((CFGFile)inconsistent.CFGFiles[1]).Depth = int.MaxValue;
+        AssertGraphRejected(inconsistent, path);
+
+        var wrongType = CreateWorkspace();
+        ((CFGFile)wrongType.CFGFiles[0]).ChildFiles.Add(new CFGEvent());
+        AssertGraphRejected(wrongType, path);
+        Console.WriteLine("PASS: cyclic, repeated, incorrectly typed and inconsistent-depth file graphs rejected before activation");
+
+        CFGConfiguration acceptedDepth = CreateFileChain(64);
+        File.WriteAllText(path, JsonConvert.SerializeObject(acceptedDepth, Settings));
+        Assert(Load(path)?.CFGFiles.Count == 65, "A valid graph at the depth boundary was rejected.");
+        AssertGraphRejected(CreateFileChain(65), path);
+
+        var oversized = CreateWorkspace();
+        while (oversized.CFGFiles.Count <= 10000)
+            oversized.CFGFiles.Add(new CFGFile(ref oversized));
+        AssertGraphRejected(oversized, path);
+        Console.WriteLine("PASS: shallow JSON reference graphs obey file-count and actual child-depth limits");
+    }
+
+    private static CFGConfiguration CreateFileChain(int maximumDepth)
+    {
+        var workspace = new CFGConfiguration();
+        CFGFile child = null;
+        for (int depth = maximumDepth; depth >= 0; depth--)
+        {
+            var file = new CFGFile(ref workspace) { Name = "depth-" + depth + ".cfg", Depth = depth };
+            if (child != null)
+                file.ChildFiles.Add(child);
+            workspace.CFGFiles.Add(file);
+            child = file;
+        }
+        return workspace;
+    }
+
+    private static void AssertGraphRejected(CFGConfiguration invalid, string path)
+    {
+        File.WriteAllText(path, JsonConvert.SerializeObject(invalid, Settings));
+        CFGConfiguration existing = CreateWorkspace();
+        CFGConfiguration loaded = existing;
+        bool silent = true;
+        WorkspaceExport.LoadConfiguration(ref path, ref loaded, ref silent);
+        Assert(ReferenceEquals(existing, loaded), "Invalid file graph replaced the current workspace.");
     }
 
     private static void AssertRejected(string json, string path, string expectedError)
