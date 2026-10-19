@@ -80,7 +80,7 @@ namespace WorkspaceCFG
         ~CFGLine()
         {
             Text = null;
-            Tokens.Clear();
+            Tokens?.Clear();
             Tokens = null;
             ParentFile = null;
         }

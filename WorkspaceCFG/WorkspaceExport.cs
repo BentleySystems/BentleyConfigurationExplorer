@@ -3,6 +3,8 @@
 // See COPYRIGHT.md in the repository root for full copyright notice
 // ---------------------------------------------------------------------------------------------
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -10,6 +12,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using WorkspaceCFG.My.Resources;
 
 namespace WorkspaceCFG
@@ -25,9 +28,45 @@ namespace WorkspaceCFG
         private static readonly JsonSerializerSettings WorkspaceJsonSettings = new JsonSerializerSettings
         {
             TypeNameHandling = TypeNameHandling.Auto,
+            SerializationBinder = new WorkspaceSerializationBinder(),
             PreserveReferencesHandling = PreserveReferencesHandling.All,
+            MaxDepth = 128,
             Formatting = Formatting.None
         };
+
+        private sealed class WorkspaceSerializationBinder : ISerializationBinder
+        {
+            private static readonly Type[] AllowedTypes =
+            {
+                typeof(CFGConfiguration), typeof(CFGEnums.Application), typeof(CFGFile),
+                typeof(CFGEvent), typeof(CFGLine), typeof(CFGVariable), typeof(CFGToken),
+                typeof(ArrayList), typeof(Dictionary<string, CFGVariable>),
+                typeof(List<CFGLine>), typeof(List<CFGToken>), typeof(List<string>),
+                typeof(string[])
+            };
+
+            public Type BindToType(string assemblyName, string typeName)
+            {
+                foreach (Type allowedType in AllowedTypes)
+                {
+                    if (typeName == allowedType.FullName &&
+                        (assemblyName == allowedType.Assembly.GetName().Name ||
+                         assemblyName == allowedType.Assembly.FullName))
+                        return allowedType;
+                }
+
+                throw new JsonSerializationException("Type is not permitted in a workspace file.");
+            }
+
+            public void BindToName(Type serializedType, out string assemblyName, out string typeName)
+            {
+                if (!AllowedTypes.Contains(serializedType))
+                    throw new JsonSerializationException("Type is not permitted in a workspace file.");
+
+                assemblyName = serializedType.Assembly.GetName().Name;
+                typeName = serializedType.FullName;
+            }
+        }
 
         // ---------------------------------------------------------------------------------------
         // @description: Saves a workspace instance to a file
@@ -62,7 +101,11 @@ namespace WorkspaceCFG
             try
             {
                 string json = File.ReadAllText(path);
-                workspace = JsonConvert.DeserializeObject<CFGConfiguration>(json, WorkspaceJsonSettings);
+                CFGConfiguration loaded = JsonConvert.DeserializeObject<CFGConfiguration>(json, WorkspaceJsonSettings);
+                if (loaded == null)
+                    throw new JsonSerializationException("Workspace must not be null.");
+                loaded.ValidateFileGraph();
+                workspace = loaded;
             }
             catch (Exception ex)
             {

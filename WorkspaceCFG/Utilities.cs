@@ -195,7 +195,7 @@ namespace WorkspaceCFG
         }
 
         // ---------------------------------------------------------------------------------------
-        // @description: 'Opens a file in notepad++ or else the system's default text editor
+        // @description: 'Opens a file in an explicitly supported text editor
         // 'Setting warn = true will warn the user if the file isn't found
         // 'Line will attempt to open the file at a specific line number
         // ---------------+---------------+---------------+---------------+---------------+-------
@@ -210,16 +210,8 @@ namespace WorkspaceCFG
                     return;
                 }
 
-                try
-                {
-                    Process.Start("notepad++.exe", $"-n{line.ToString().Trim()} \"{Filename}\"");
-                    System.Threading.Thread.Sleep(200);
-                }
-                catch
-                {
-                    Process.Start(Filename);
-                    System.Threading.Thread.Sleep(200);
-                }
+                if (!EditorLauncher.TryOpen(Filename, line))
+                    Debug.WriteLine("  [ERROR] Utilities.OpenInEditor: No supported text editor could be started.");
             }
             catch (Exception ex)
             {
