@@ -76,11 +76,11 @@ namespace WorkspaceCFG
         // ---------------+---------------+---------------+---------------+---------------+-------
         ~CFGConfiguration()
         {
-            Variables.Clear();
+            Variables?.Clear();
             Variables = null;
-            CFGFiles.Clear();
+            CFGFiles?.Clear();
             CFGFiles = null;
-            CFGEvents.Clear();
+            CFGEvents?.Clear();
             CFGEvents = null;
         }
 
@@ -370,53 +370,49 @@ namespace WorkspaceCFG
                 string dirLocation = Path.GetDirectoryName(exePath);
                 if (string.IsNullOrEmpty(dirLocation))
                     return;
-                Type classType = null;
-                System.Reflection.Assembly productAssembly;
 
                 try
                 {
-                    // Load the assembly from the specified path.
-                    productAssembly = System.Reflection.Assembly.LoadFile(
+                    var productInfo = ProductMetadata.Read(
                         Path.Combine(dirLocation, "Bentley.PowerPlatform.FeatureAspects.dll"));
-                    classType = productAssembly.GetType("Bentley.PowerPlatform.Resx");
+                    if (productInfo.Count > 0)
+                        SetProductInfo(productInfo);
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine($"  [ERROR] {GetType().Name}.{System.Reflection.MethodBase.GetCurrentMethod().Name} 1 : {ex.Message}");
-                    // This happens when we are trying to load a 32-bit dll.
                 }
-
-                if (classType is null)
-                {
-                    return;
-                }
-
-                SetProductInfo(ref classType);
             }
         }
 
         public void SetProductInfo(ref Type classType)
+        {
+            if (classType != null)
+                SetProductInfo(ProductMetadata.Read(classType.Assembly.Location));
+        }
+
+        private void SetProductInfo(Dictionary<string, string> productInfo)
         {
             var msv = new CFGEnums.MSVersion();
             object property_value;
 
             // TODO: This is not returning the proper variable.
             // productConfigVarName - > _USTN_PRODUCT_CONFIGVARNAME
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_ConfigVarName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_ConfigVarName");
             if (property_value is null)
                 property_value = "";
             msv.productConfigVarName = property_value.ToString();
             RedefineVariable("_USTN_PRODUCT_CONFIGVARNAME", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromProductConfigVarName");
 
             // productDirectoryName - > _USTN_PRODUCT_DIRNAME
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_DirectoryName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_DirectoryName");
             if (property_value is null)
                 property_value = "";
             msv.productDirectoryName = property_value.ToString();
             RedefineVariable("_USTN_PRODUCT_DIRNAME", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromProductDirectoryName");
 
             // productFileBaseName - > _USTN_PRODUCT_FILEBASENAME
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_FileBaseName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_FileBaseName");
             if (property_value is null)
                 property_value = "";
             msv.productFileBaseName = property_value.ToString();
@@ -424,35 +420,35 @@ namespace WorkspaceCFG
 
 
             // productFullMarketingName -> _USTN_PRODUCT_FILETYPENAME
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_FileTypeName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_FileTypeName");
             if (property_value is null)
                 property_value = "";
             msv.productFileTypeName = property_value.ToString();
             RedefineVariable("_USTN_PRODUCT_FILETYPENAME", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromProductFileTypeName");
 
             // productFullMarketingName -> _USTN_PRODUCT_FULLMARKETINGNAME
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_FullMarketingName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_FullMarketingName");
             if (property_value is null)
                 property_value = "";
             msv.productFullMarketingName = property_value.ToString();
             RedefineVariable("_USTN_PRODUCT_FULLMARKETINGNAME", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromProductFullMarketingName");
 
             // productGroupName -> _USTN_PRODUCT_ONE_GROUPNAME
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_GroupName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_GroupName");
             if (property_value is null)
                 property_value = "";
             msv.productGroupName = property_value.ToString();
             RedefineVariable("_USTN_PRODUCT_ONE_GROUPNAME", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromProductGroupName");
 
             // productProductName -> _USTN_PRODUCT_NAME
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_ProductName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_ProductName");
             if (property_value is null)
                 property_value = "";
             msv.productProductName = property_value.ToString();
             RedefineVariable("_USTN_PRODUCT_NAME", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromName");
 
             // productShortName -> _USTN_PRODUCT_SHORTNAME, _USTN_PRODUCT_HELPFILENAME, _USTN_HELPNAMESPACE
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_ProductShortName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_ProductShortName");
             if (property_value is null)
                 property_value = "";
             msv.productProductShortName = property_value.ToString();
@@ -462,40 +458,48 @@ namespace WorkspaceCFG
             RedefineVariable("_ENGINENAME", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromProductShortName");
 
             // productShortMarketingName -> _USTN_PRODUCT_SHORTMARKETINGNAME
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_ShortMarketingName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_ShortMarketingName");
             if (property_value is null)
                 property_value = "";
             msv.productShortMarketingName = property_value.ToString();
             RedefineVariable("_USTN_PRODUCT_SHORTMARKETINGNAME", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromProductShortMarketingName");
 
             // productSubGroupName -> _USTN_PRODUCT_ONE_SUBGROUPNAME
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_SubGroupName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_SubGroupName");
             if (property_value is null)
                 property_value = "";
             msv.productSubGroupName = property_value.ToString();
             RedefineVariable("_USTN_PRODUCT_ONE_SUBGROUPNAME", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromProductSubGroupName");
 
             // productTitlebarName -> _USTN_PRODUCT_TITLEBARNAME
-            property_value = GetPropertyInfoValue(ref classType, "ProductNames_TitleBarName");
+            property_value = productInfo.GetValueOrDefault("ProductNames_TitleBarName");
             if (property_value is null)
                 property_value = "";
             msv.productTitlebarName = property_value.ToString();
             RedefineVariable("_USTN_PRODUCT_TITLEBARNAME", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromProductTitleBarName");
 
             // productCopyrightYears -> _USTN_PRODUCT_COPYRIGHTYEARS
-            property_value = GetPropertyInfoValue(ref classType, "CopyrightYears");
+            property_value = productInfo.GetValueOrDefault("CopyrightYears");
             if (property_value is null)
                 property_value = "";
             msv.productCopyrightYears = property_value.ToString();
             RedefineVariable("_USTN_PRODUCT_COPYRIGHTYEARS", property_value.ToString(), -1, false, true, "TXT_MsgVariableCreatedFromProductCopyRightYears");
 
             // version -> _USTN_PRODUCT_VERSION_GENERATION, _USTN_PRODUCT_VERSION_MAJOR, _USTN_PRODUCT_VERSION_MINOR, _USTN_PRODUCT_VERSION_BUILD
-            property_value = GetPropertyInfoValue(ref classType, "ProductVersion");
-            if (property_value is null)
-                property_value = ApplicationData.Version;
+            property_value = productInfo.GetValueOrDefault("ProductVersion");
+            if (!Version.TryParse(property_value?.ToString(), out Version productVersion) &&
+                !Version.TryParse(ApplicationData.Version, out productVersion))
+                productVersion = new Version(0, 0, 0, 0);
+            property_value = productVersion.ToString();
             msv.version = property_value.ToString();
             //string[] version = Strings.Split(property_value.ToString(), ".", Compare: CompareMethod.Text);
-            string[] version = property_value.ToString().Split('.');
+            string[] version =
+            {
+                productVersion.Major.ToString(CultureInfo.InvariantCulture),
+                productVersion.Minor.ToString(CultureInfo.InvariantCulture),
+                Math.Max(0, productVersion.Build).ToString(CultureInfo.InvariantCulture),
+                Math.Max(0, productVersion.Revision).ToString(CultureInfo.InvariantCulture)
+            };
             RedefineVariable("_USTN_PRODUCT_VERSION_GENERATION", version[0], -1, false, true, "TXT_MsgVariableCreatedFromProduct_Version");
             RedefineVariable("_USTN_PRODUCT_VERSION_MAJOR", version[1], -1, false, true, "TXT_MsgVariableCreatedFromProduct_Version");
             RedefineVariable("_USTN_PRODUCT_VERSION_MINOR", version[2], -1, false, true, "TXT_MsgVariableCreatedFromProduct_Version");
@@ -516,7 +520,7 @@ namespace WorkspaceCFG
             }
 
             // _MICROSTATION
-            if (ApplicationData.Name.Contains("MicroStation"))
+            if (ApplicationData.Name?.Contains("MicroStation") == true)
             {
                 RedefineVariable("_MICROSTATION", 1.ToString(), -1, false, true, "");
             }
@@ -524,16 +528,8 @@ namespace WorkspaceCFG
 
         public object GetPropertyInfoValue(ref Type classType, string name)
         {
-            object property_value = null;
-
-            if (classType != null)
-            {
-                var propertyInfo = classType.GetProperty(name);
-                var getMethodInfo = propertyInfo.GetGetMethod();
-                property_value = getMethodInfo.Invoke(null, null);
-            }
-
-            return property_value;
+            return classType == null ? null :
+                ProductMetadata.Read(classType.Assembly.Location).GetValueOrDefault(name);
         }
 
         private void Set_USTN_LocalUserTempPathOld()

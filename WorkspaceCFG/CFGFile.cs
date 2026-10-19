@@ -80,14 +80,14 @@ namespace WorkspaceCFG
         ~CFGFile()
         {
             ParentConfiguration = null;
-            ChildFiles.Clear();
+            ChildFiles?.Clear();
             ChildFiles = null;
             ParentFile = null;
             _ifStack = null;
-            _parentList.Clear();
+            _parentList?.Clear();
             _parentList = null;
             _currentLine = null;
-            Lines.Clear();
+            Lines?.Clear();
             Lines = null;
         }
 
