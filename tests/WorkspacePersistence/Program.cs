@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -77,6 +79,7 @@ internal static class Program
                 Console.WriteLine("PASS: supplied .bcf payload rejected by serializer and real file loader");
             }
             AssertSafeReload(directory);
+            AssertSafeEditors(directory);
             GC.Collect();
             GC.WaitForPendingFinalizers();
             Console.WriteLine("PASS: partially deserialized models can be finalized safely");
@@ -91,6 +94,61 @@ internal static class Program
         {
             FileWatcher.ClearWatches();
             Directory.Delete(directory, true);
+        }
+    }
+
+    private static void AssertSafeEditors(string directory)
+    {
+        string filename = Path.Combine(directory, "document with spaces --reuse-window.exe");
+        File.WriteAllText(filename, "This file must only be passed to an editor.");
+        foreach (string name in new[] { "notepad++.exe", "Code.exe", "notepad.exe" })
+            File.WriteAllText(Path.Combine(directory, name), "Untrusted editor lookalike");
+
+        string previousDirectory = Environment.CurrentDirectory;
+        string previousPath = Environment.GetEnvironmentVariable("PATH");
+        try
+        {
+            Environment.CurrentDirectory = directory;
+            Environment.SetEnvironmentVariable("PATH", directory);
+            Type launcher = typeof(WorkspaceExport).Assembly.GetType("WorkspaceCFG.EditorLauncher", true);
+            MethodInfo getStartInfos = launcher.GetMethod("GetStartInfos", BindingFlags.NonPublic | BindingFlags.Static);
+            ProcessStartInfo[] candidates = ((IEnumerable<ProcessStartInfo>)getStartInfos.Invoke(null,
+                new object[] { Path.GetFileName(filename), 42 })).ToArray();
+            Assert(candidates.Length > 0, "No editor candidates were provided.");
+            string[] supported = { "notepad++.exe", "Code.exe", "notepad.exe" };
+            int previousPreference = -1;
+            foreach (ProcessStartInfo candidate in candidates)
+            {
+                string executable = Path.GetFileName(candidate.FileName);
+                int preference = Array.FindIndex(supported, name =>
+                    name.Equals(executable, StringComparison.OrdinalIgnoreCase));
+                Assert(preference >= previousPreference && preference >= 0, "Unexpected editor or preference order.");
+                previousPreference = preference;
+                Assert(Path.IsPathFullyQualified(candidate.FileName), "Editor uses executable search-path lookup.");
+                Assert(!candidate.FileName.StartsWith(directory, StringComparison.OrdinalIgnoreCase),
+                    "An editor was discovered in the untrusted working directory or PATH.");
+                Assert(!candidate.UseShellExecute && candidate.Arguments == "", "Editor uses shell or string arguments.");
+                Assert(candidate.WorkingDirectory == Path.GetDirectoryName(candidate.FileName),
+                    "Editor inherits the untrusted working directory.");
+                Assert(!string.Equals(candidate.FileName, filename, StringComparison.OrdinalIgnoreCase),
+                    "Document was selected as the executable.");
+                string[] expectedArguments = preference switch
+                {
+                    0 => new[] { "-n42", filename },
+                    1 => new[] { "--goto", filename + ":42" },
+                    _ => new[] { filename }
+                };
+                Assert(candidate.ArgumentList.SequenceEqual(expectedArguments), "Document or line arguments changed.");
+            }
+            Assert(candidates[^1].FileName.Equals(Path.Combine(Environment.SystemDirectory, "notepad.exe"),
+                StringComparison.OrdinalIgnoreCase), "Fallback is not the Windows text editor.");
+            Console.WriteLine("PASS: editor allowlist uses absolute installation paths, structured arguments and safe preference order");
+            Console.WriteLine("PASS: executable-looking documents and editor lookalikes on PATH are never selected as commands");
+        }
+        finally
+        {
+            Environment.CurrentDirectory = previousDirectory;
+            Environment.SetEnvironmentVariable("PATH", previousPath);
         }
     }
 
